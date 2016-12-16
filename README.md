@@ -17,7 +17,7 @@ This Chrome Extension is used for keeping track of what everyone is working on, 
 
 ## Chrome Extension installation instructions
 
-1.	Download or Clone this repo: https://github.com/mi-lee/presidential-harvest-nomination-tool
+1.	Download or Clone this repo: https://github.com/CivicTechTO/presidential-harvest-nomination-tool
 <img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/gitclone.png" width="700" align="middle")/>
 
 2. Open Google Chrome -> Settings -> Extensions, then click Load unpacked extension
