@@ -47,6 +47,7 @@ chrome.browserAction.onClicked.addListener( function( tab ) {
     url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage["name"] + EMAIL_FIELD + localStorage["email"] + EVENTNAME_FIELD + localStorage["eventName"] 
           + COMMENT_FIELD + commentAnswer + URL_FIELD + currentURL +'&submit=Submit',
       success: function(res){
+          alert("Thank you for submitting \n" + currentURL + ". \n\nThe nomination will be added to the seed queue.");
         // uncomment this line to also add the URL through the official notificaiton tool.  
         // window.open(notificationToolUrl + currentURL);
     },
