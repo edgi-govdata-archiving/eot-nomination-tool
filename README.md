@@ -1,6 +1,6 @@
 # 2016 Presidental Harvest - Nomination Tool
 
-(Developers please see [Contributing and Forking This Tool](./Contribute.md))
+(Developers please see [Contributing and Forking This Tool](./Contributing.md))
 Nomination tool Chrome Bookmarlet for [End of Term Presidental Harvest 2016](http://digital2.library.unt.edu/nomination/eth2016/about/).
 
 > The Library of Congress, California Digital Library, University of North Texas Libraries, Internet Archive, George Washington University Libraries, Stanford University Libraries, and the U.S. Government Publishing Office have joined together for a collaborative project to preserve public United States Government web sites at the end of the current presidential administration ending January 20, 2017. This harvest is intended to document federal agencies' presence on the World Wide Web during the transition of Presidential administrations and to enhance the existing collections of the partner institutions.
