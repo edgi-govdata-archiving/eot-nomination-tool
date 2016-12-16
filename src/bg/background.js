@@ -43,12 +43,12 @@ chrome.browserAction.onClicked.addListener( function( tab ) {
 
   // Do GET call to post to Google Form and open new tab
   $.get({
-    url:GOOGLE_FORMS_URL + NAME_FIELD + localStorage["name"] + EVENTNAME_FIELD + localStorage["eventName"]
-          + URL_FIELD + currentURL + COMMENT_FIELD + commentAnswer +'&submit=Submit',
+    url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage["name"] + EVENTNAME_FIELD + localStorage["eventName"]
+         + URL_FIELD + currentURL + COMMENT_FIELD + commentAnswer +'&submit=Submit',
       success: function(res){
-          console.log("successfully logged " + url + "to the event spreadsheet.");
-          alert("thank you!");
-     // window.open(notificationToolUrl + currentURL);
+        console.log("successfully logged " + res + "to the event spreadsheet.");
+        alert("thank you!");
+        // window.open(notificationToolUrl + currentURL);
     },
     error: function(err){
       console.error(err);
