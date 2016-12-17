@@ -24,7 +24,7 @@ This Chrome Extension is used for keeping track of what everyone is working on, 
 
 We have published a version of the chrome Extension [on the Chrome Store](https://chrome.google.com/webstore/detail/nominationtool/abjpihafglmijnkkoppbookfkkanklok). Just click on that link in Chrome and hit ```add to Chrome```!
 
-### Don't follow these instructions on Guerilla Day! Instead Install from Stre as above
+### Don't follow these instructions on Guerilla Archiving Day! Instead Install from Store as above
 1.	Download or Clone this repo: https://github.com/CivicTechTO/presidential-harvest-nomination-tool
 <img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/gitclone.png" width="700" align="middle")/>
 
