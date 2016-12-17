@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+        min-width: 420px;
+        overflow-x: hidden;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        }
+        input, textarea {
+        width: 420px;
+        }
+        input#save {
+        font-weight: bold; width: auto;
+        }
+        </style>
+    </head>
+    <body>
+        <form id="nominationTool">
+            <p><label for="title">Title</label><br />
+            <input type="text" id="title" name="title" size="50" value="" /></p>
+            <p><label for="url">Url</label><br />
+            <input type="text" id="url" name="url" size="50" value="" /></p>
+            <p><label for="summary">Summary</label><br />
+        <textarea id="summary" name="summary" rows="6" cols="35"></textarea></p>
+        <p><label for="tags">Tags</label><br />
+        <input type="text" id="tags" name="tags" size="50" value="" /></p>
+        <p>
+            <input id="save" type="submit" value="Save Bookmark" />
+            <span id="status-display"></span>
+        </p>
+    </form>
+    <script src="src/lib/jquery-3.1.1.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
