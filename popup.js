@@ -18,13 +18,15 @@ function nominationTool( e ) {
     var URL_FIELD = '&entry.242612017=';
     var TITLE_FIELD = '&entry.1562922032=';
     var NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
+    var AGENCY_FIELD = 'entry.2097502371';
 
     var title = $( '#title' ).val();
     var name = $( '#name' ).val();
     var email = $( '#email' ).val();
     var eventName = $( '#eventName' ).val();
     var currentURL = $( '#url' ).val();
-
+    var agency = $( '#agency' ).val();
+    
     if ( localStorage.name !== name ) {
         localStorage.name = name;
     }
@@ -37,7 +39,7 @@ function nominationTool( e ) {
 
     // Do GET call to post to Google Form and open new tab
     $.get( {
-        url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD + localStorage.eventName + URL_FIELD + currentURL + '&submit=Submit',
+        url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD + localStorage.eventName + URL_FIELD + currentURL +AGENCY_FIELD + agency + '&submit=Submit',
         success: function( res ) {
             $( '#success' ).html( "Success!" );
             setTimeout( function() {
