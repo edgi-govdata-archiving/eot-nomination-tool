@@ -23,9 +23,13 @@ function nominationTool( e ) {
     var title = $( '#title' ).val();
     var name = $( '#name' ).val();
     var email = $( '#email' ).val();
-    var eventName = $( '#eventName' ).val();
+    // make constant for today's event
+    var eventName = "Guerilla Archiving Toronto Dec. 17"
+//    var eventName = $( '#eventName' ).val();
     var currentURL = $( '#url' ).val();
-    var agency = $( '#agency' ).val();
+//    var agency = $( '#agency' ).val();
+    //make constant for today's event
+    var agency = "Environmental_Protection_Agency";
 
     if ( localStorage.name !== name ) {
         localStorage.name = name;
