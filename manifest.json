@@ -10,14 +10,18 @@
     "128": "icons/icon128.png"
   },
   "browser_action": {
-    "default_icon": "icons/icon16.png"
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
   },
   "default_locale": "en",
   "background": {
-    "scripts": [ "src/lib/jquery-3.1.1.min.js", "src/bg/background.js" ],
-    "persistent": true
+    "scripts": [ "event.js" ],
+    "persistent": false
   },
   "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
     "clipboardRead",
     "clipboardWrite",
     "identity",
