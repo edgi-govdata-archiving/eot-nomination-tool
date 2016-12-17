@@ -1,6 +1,9 @@
 # 2016 Presidental Harvest - Nomination Tool
 
 (Developers please see [Contributing and Forking This Tool](./Contributing.md))
+
+(for instructions skip straight to [Usage Instructions](#Usage))
+
 Nomination tool Chrome Bookmarlet for [End of Term Presidental Harvest 2016](http://digital2.library.unt.edu/nomination/eth2016/about/).
 
 > The Library of Congress, California Digital Library, University of North Texas Libraries, Internet Archive, George Washington University Libraries, Stanford University Libraries, and the U.S. Government Publishing Office have joined together for a collaborative project to preserve public United States Government web sites at the end of the current presidential administration ending January 20, 2017. This harvest is intended to document federal agencies' presence on the World Wide Web during the transition of Presidential administrations and to enhance the existing collections of the partner institutions.
@@ -16,8 +19,12 @@ This was in preparation for [Guerrilla Archiving: Saving Environmental Data from
 This Chrome Extension is used for keeping track of what everyone is working on, once clicked the extension will record the URL you have just submitted for nomination to a [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSf6Yc_p3VjHELQOactjYGJIGpU4uwBg5omZAZsbTQZXbT87tQ/viewform).
 
 
+
 ## Chrome Extension installation instructions
 
+We have published a version of the chrome Extension [on the Chrome Store](https://chrome.google.com/webstore/detail/nominationtool/abjpihafglmijnkkoppbookfkkanklok). Just click on that link in Chrome and hit ```add to Chrome```!
+
+### Don't follow these instructions on Guerilla Day! Instead Install from Stre as above
 1.	Download or Clone this repo: https://github.com/CivicTechTO/presidential-harvest-nomination-tool
 <img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/gitclone.png" width="700" align="middle")/>
 
@@ -30,7 +37,10 @@ This Chrome Extension is used for keeping track of what everyone is working on, 
 4. Extension should appear now
 <img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/postinstallExtension.png" width="700" align="middle"/>
 
-5. Go to the URL that your wish to nominate, then click the extension a form will popup with the options to submit your name, email and name of event. The title and URL will be autofilled with the current URL of the tab.
+
+## Usage 
+
+5. Go to the URL that your wish to nominate, then click the extension a form will popup with the options to submit your name and email. The title and URL will be autofilled with the current URL of the tab, and on subsequent uses your name/email information will also be pre-filled.  
 ![Here](docs/img/presidential-ext.gif)
 
 7. Move on to the next URL and hit the extension again
