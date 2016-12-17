@@ -30,12 +30,9 @@ This Chrome Extension is used for keeping track of what everyone is working on, 
 4. Extension should appear now
 <img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/postinstallExtension.png" width="700" align="middle"/>
 
-5. Go to the URL that your wish to nominate, then click the extension(for first time use, you will be prompted to enter your name and the name of the event you are using this tool for)
-<img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/nominationExtension.png" width="700" align="middle"/>
+5. Go to the URL that your wish to nominate, then click the extension a form will popup with the options to submit your name, email and name of event. The title and URL will be autofilled with the current URL of the tab.
+![Here](docs/img/presidential-ext.gif)
 
-6. Submit the URL for nomination in the unt web app by click 'Add A URL' button
-<img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/AddAURL.png" width="700" align="middle"/>
-
-7. Move on to the next URL and repeat steps 5 and 6
+7. Move on to the next URL and hit the extension again
 
 Happy Archiving!!!
