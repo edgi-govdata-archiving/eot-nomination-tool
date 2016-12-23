@@ -24,9 +24,11 @@ This Chrome Extension is used for keeping track of what everyone is working on, 
 
 We have published a version of the chrome Extension [on the Chrome Store](https://chrome.google.com/webstore/detail/nominationtool/abjpihafglmijnkkoppbookfkkanklok). Just click on that link in Chrome and hit ```add to Chrome```!
 
-### Don't follow these instructions on Guerilla Archiving Day! Instead Install from Store as above
-1.	Download or Clone this repo: https://github.com/CivicTechTO/presidential-harvest-nomination-tool
-<img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/gitclone.png" width="700" align="middle")/>
+### Alternate: Install from source
+
+**Don't follow these instructions on Guerilla Archiving Day! Instead Install from Chrome Store as above. Preserved here for groups that want to fork the extension**
+1.	Download or Clone this repo: https://github.com/CivicTechTO/presidential-harvest-nomination-tool<
+img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/gitclone.png" width="700" align="middle")/>
 
 2. Open Google Chrome -> Settings -> Extensions, then click Load unpacked extension
 <img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/loadExtension.png" width="700" align="middle"/>
@@ -40,7 +42,7 @@ We have published a version of the chrome Extension [on the Chrome Store](https:
 
 ## Usage 
 
-5. Go to the URL that your wish to nominate, then click the extension a form will popup with the options to submit your name and email. The title and URL will be autofilled with the current URL of the tab, and on subsequent uses your name/email information will also be pre-filled.  
+5. Go to the URL that you wish to nominate, thje click the extension icon near the address bar. A form will pop up beneath the icon. The title and URL will be autofilled with the current URL of the tab, and on subsequent uses your name/email information will also be pre-filled. Similarly, you will be given a list of government agencies to choose from, and asked to submit the name of the event you're working with. On Subsequent uses, these will also be pre-filled, though you can alterhtem at any time just by choosing something else.  
 ![Here](docs/img/presidential-ext.gif)
 
 7. Move on to the next URL and hit the extension again
