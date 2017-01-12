@@ -11,14 +11,18 @@ function nominationTool( e ) {
   e.preventDefault();
 
   // Google Forms constants
-  var GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1kuwxu2lXYSRpkwBj4o9kwjURZL3hgk-mSFoK4qkC4ZI/formResponse?ifq';
-  var NAME_FIELD = '&entry.604638068=';
-  var EMAIL_FIELD = '&entry.582835473=';
-  var EVENTNAME_FIELD = '&entry.1800984457=';
-  var URL_FIELD = '&entry.242612017=';
-  var TITLE_FIELD = '&entry.1562922032=';
+  var GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1udxf9C7XeO7rm-SoucjDIv0c8XzGb7VVutsCI8r4s-Y/formResponse?ifq';
+  var NAME_FIELD = '&entry.1227505863=';
+  var EMAIL_FIELD = '&entry.1975141568=';
+  var EVENTNAME_FIELD = '&entry.1518336548=';
+  var URL_FIELD = '&entry.1767515686=';
+  var TITLE_FIELD = '&entry.180917746=';
   var NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
-  var AGENCY_FIELD = '&entry.2097502371=';
+  var AGENCY_FIELD = '&entry.1285343614=';
+  var AGENCY_ID = '&entry.536064408=';
+  var SUBAGENCY_ID = '&entry.1706245913=';
+  var ORGANIZATION_ID = '&entry.1076101938=';
+  var SUBPRIMER_ID = '&entry.615621344=';
 
   var title = $( '#title' ).val();
   var name = $( '#name' ).val();
@@ -28,6 +32,10 @@ function nominationTool( e ) {
   var eventName = $( '#eventName' ).val();
   var currentURL = $( '#url' ).val();
   var agency = $( '#agency option:selected' ).text();
+  var agencyID = $( '#agencyID').val();
+  var subAgencyID = $( '#subAgencyID').val();
+  var organizationID = $( '#organizationID').val();
+  var subprimerID = $( '#subprimerID').val();
 
   if ( localStorage.name !== name ) {
     localStorage.name = name;
@@ -44,7 +52,8 @@ function nominationTool( e ) {
 
   // Do GET call to post to Google Form and open new tab
   $.get( {
-    url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD + localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + '&submit=Submit',
+    url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD + 
+         localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID + ORGANIZATION_ID + organizationID + SUBPRIMER_ID + subprimerID + '&submit=Submit',
     success: function( res ) {
       $( '#success' ).html( "Success!" );
       setTimeout( function() {
