@@ -1,5 +1,15 @@
-// This callback function is called when the content script has been
-// injected and returned its results
+/* List of Agency Office Codes and their corresponding Department names
+*/
+window.AGENCY_IDS = {
+  "1": "Environmental Protection Agency",
+  "2": "Energy Department",
+  "3": "National Oceanic and Atmospheric Administration",
+  "4": "Occupational Safety and Health Administration",
+  "5": "National Aeronautics and Space Administration: Science Mission Directorate",
+  "6": "National Aeronautics and Space Administration: Sciences and Exploration Directorate",
+  "7": "Agriculture Department",
+  "8": "Interior Department"
+};
 
 function onPageDetailsReceived( pageDetails ) {
   pageTitle = document.getElementById( 'title' ).value = pageDetails.title;
@@ -32,10 +42,10 @@ function nominationTool( e ) {
   var eventName = $( '#eventName' ).val();
   var currentURL = $( '#url' ).val();
   var agency = $( '#agency option:selected' ).text();
-  var agencyID = $( '#agencyID').val();
-  var subAgencyID = $( '#subAgencyID').val();
-  var organizationID = $( '#organizationID').val();
-  var subprimerID = $( '#subprimerID').val();
+  var agencyID = $( '#agencyID' ).val();
+  var subAgencyID = $( '#subAgencyID' ).val();
+  var organizationID = $( '#organizationID' ).val();
+  var subprimerID = $( '#subprimerID' ).val();
 
   if ( localStorage.name !== name ) {
     localStorage.name = name;
@@ -52,13 +62,13 @@ function nominationTool( e ) {
 
   // Do GET call to post to Google Form and open new tab
   $.get( {
-    url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD + 
-         localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID + ORGANIZATION_ID + organizationID + SUBPRIMER_ID + subprimerID + '&submit=Submit',
+    url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD +
+      localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID + ORGANIZATION_ID + organizationID + SUBPRIMER_ID + subprimerID + '&submit=Submit',
     success: function( res ) {
       $( '#success' ).html( "Success!" );
       setTimeout( function() {
           window.location.reload();
-        }, 1000 )
+        }, 1000 );
         // uncomment this line to also add the URL through the official notificaiton tool.
         // window.open(NOTIFICATION_TOOL_URL + currentURL);
     },
@@ -68,9 +78,10 @@ function nominationTool( e ) {
   } );
 }
 
-// When the popup HTML has loaded
+/* When the popup loads: Autopopulate the name, event name and email if it has been submitted before,
+* i.e. if localStorage has these fields already saved.
+*/
 window.addEventListener( 'load', function( evt ) {
-  // if localStorage.name, localStorage.eventname or localStorage.email exist, autopopulate the form and autofocus
   if ( localStorage.name && localStorage.name !== "null" ) {
     $( '#name' ).val( localStorage.name );
   }
@@ -83,6 +94,16 @@ window.addEventListener( 'load', function( evt ) {
   if ( localStorage.agency && localStorage.agency !== "null" ) {
     $( '#agency' ).val( localStorage.agency );
   }
+
+  /* Disable the Department/Agency dropdown bar once the agency code has been entered.
+  * Changing the code will re-enter the correct department/agency name.
+  */
+  $( '#agencyID' ).change( function( event ) {
+    var enteredCode = $( event.currentTarget ).val();
+    var agencyName = window.AGENCY_IDS[ enteredCode ];
+    $( "#agency" ).val( agencyName );
+    $( "#agency" ).attr( 'disabled', 'disabled' );
+  } );
 
   // Cache a reference to the status display SPAN
   statusDisplay = document.getElementById( 'status-display' );
