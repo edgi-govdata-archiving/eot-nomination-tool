@@ -11,7 +11,7 @@ function nominationTool( e ) {
   e.preventDefault();
 
   // Google Forms constants
-  var GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1kuwxu2lXYSRpkwBj4o9kwjURZL3hgk-mSFoK4qkC4ZI/formResponse?ifq';
+  var GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSflojxTxupymTY1ZIJfj4NM7BgXWc-RDg5dg0Yyf1wzx8AvqA/formResponse?ifq';
   var NAME_FIELD = '&entry.604638068=';
   var EMAIL_FIELD = '&entry.582835473=';
   var EVENTNAME_FIELD = '&entry.1800984457=';
