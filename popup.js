@@ -78,6 +78,10 @@ function nominationTool( e ) {
     localStorage.suborgID = suborgID;
   }
 
+  if ( localStorage.suprimerID !== suprimerID ) {
+    localStorage.suprimerID = suprimerID;
+  }
+
   // set value of crawlable fields -- yes or no?
   var crawlableText = "";
   if(document.getElementById('crawlableID').checked) {
@@ -131,6 +135,9 @@ window.addEventListener( 'load', function( evt ) {
   }
   if ( localStorage.suborgID && localStorage.suborgID !== "null" ) {
     $( '#suborgID' ).val( localStorage.suborgID );
+  }
+  if ( localStorage.suprimerID && localStorage.suprimerID !== "null" ) {
+    $( '#suprimerID' ).val( localStorage.suprimerID );
   }
 
   /* Disable the Department/Agency dropdown bar once the agency code has been entered.
