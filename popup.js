@@ -32,7 +32,9 @@ function nominationTool( e ) {
   var AGENCY_ID = '&entry.536064408=';
   var SUBAGENCY_ID = '&entry.1706245913=';
   var ORGANIZATION_ID = '&entry.1076101938=';
+  var SUBORG_ID = '&entry.1768657731=';
   var SUBPRIMER_ID = '&entry.615621344=';
+  var CRAWLABLE_ID = "&entry.2059306163=";
 
   var title = $( '#title' ).val();
   var name = $( '#name' ).val();
@@ -45,8 +47,10 @@ function nominationTool( e ) {
   var agencyID = $( '#agencyID' ).val();
   var subAgencyID = $( '#subAgencyID' ).val();
   var organizationID = $( '#organizationID' ).val();
+  var suborgID = $( '#suborgID' ).val();
   var subprimerID = $( '#subprimerID' ).val();
-
+  var crawlableID = $( '#crawlableID').val();
+  
   if ( localStorage.name !== name ) {
     localStorage.name = name;
   }
@@ -59,11 +63,25 @@ function nominationTool( e ) {
   if ( localStorage.agency !== agency ) {
     localStorage.agency = agency;
   }
+  
+  if ( localStorage.agencyID !== agencyID ) {
+    localStorage.agencyID = agencyID;
+  }
+  if ( localStorage.subAgencyID !== subAgencyID ) {
+    localStorage.subAgencyID = subAgencyID;
+  }
+  if ( localStorage.organizationID !== organizationID ) {
+    localStorage.organizationID = organizationID;
+  }
+  if ( localStorage.suborgID !== suborgID ) {
+    localStorage.suborgID = suborgID;
+  }
+
 
   // Do GET call to post to Google Form and open new tab
   $.get( {
     url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD +
-      localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID + ORGANIZATION_ID + organizationID + SUBPRIMER_ID + subprimerID + '&submit=Submit',
+      localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID + ORGANIZATION_ID + organizationID + SUBORG_ID + suborgID + SUBPRIMER_ID + subprimerID + '&submit=Submit',
     success: function( res ) {
       $( '#success' ).html( "Success!" );
       setTimeout( function() {
@@ -93,6 +111,19 @@ window.addEventListener( 'load', function( evt ) {
   }
   if ( localStorage.agency && localStorage.agency !== "null" ) {
     $( '#agency' ).val( localStorage.agency );
+  }
+
+  if ( localStorage.agencyID && localStorage.agencyID !== "null" ) {
+    $( '#agencyID' ).val( localStorage.agencyID );
+  }
+  if ( localStorage.subAgencyID && localStorage.subAgencyID !== "null" ) {
+    $( '#subAgencyID' ).val( localStorage.subAgencyID );
+  }
+  if ( localStorage.organizationID && localStorage.organizationID !== "null" ) {
+    $( '#organizationID' ).val( localStorage.organizationID );
+  }
+  if ( localStorage.suborgID && localStorage.suborgID !== "null" ) {
+    $( '#suborgID' ).val( localStorage.suborgID );
   }
 
   /* Disable the Department/Agency dropdown bar once the agency code has been entered.
