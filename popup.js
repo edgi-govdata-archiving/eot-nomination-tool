@@ -27,6 +27,7 @@ function nominationTool( e ) {
   var EVENTNAME_FIELD = '&entry.1518336548=';
   var URL_FIELD = '&entry.1767515686=';
   var TITLE_FIELD = '&entry.180917746=';
+
   var NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
   var AGENCY_FIELD = '&entry.1285343614=';
   var AGENCY_ID = '&entry.536064408=';
