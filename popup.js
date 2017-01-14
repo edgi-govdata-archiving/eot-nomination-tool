@@ -77,11 +77,17 @@ function nominationTool( e ) {
     localStorage.suborgID = suborgID;
   }
 
-
+  // set value of crawlable fields -- yes or no?
+  var crawlableText = "";
+  if(document.getElementById('crawlableID').checked) {
+    crawlableText = CRAWLABLE_ID + crawlableID
+  }
+  
   // Do GET call to post to Google Form and open new tab
   $.get( {
     url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD +
-      localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID + ORGANIZATION_ID + organizationID + SUBORG_ID + suborgID + SUBPRIMER_ID + subprimerID + CRAWLABLE_ID + crawlableID +'&submit=Submit',
+      localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID +
+      ORGANIZATION_ID + organizationID + SUBORG_ID + suborgID + SUBPRIMER_ID + subprimerID + crawlableText +'&submit=Submit',
     success: function( res ) {
       $( '#success' ).html( "Success!" );
       setTimeout( function() {
