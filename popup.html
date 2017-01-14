@@ -599,7 +599,7 @@ html, body {min-height: 600px;}
           <input required type="number" min="0" max="99" class="form-control" id="agencyID" name="agencyID"/>
           <input required type="number" min="0" max="99" class="form-control" id="subAgencyID" name="subAgencyID"/>
           <input required type="number" min="0" max="99" class="form-control" id="organizationID" name="organizationID"/>
-          <input required type="number" min="0" max="99" class="form-control" id="suborgID" name="suborgID"/>
+          <input type="number" min="0" max="99" class="form-control" id="suborgID" name="suborgID"/>
         </div>
         <!-- Sub-Primer Num -->
         <!-- NOTE: This is the only field that is NOT required to submit the form. -->
@@ -612,10 +612,10 @@ html, body {min-height: 600px;}
         </div>
         <div class="quick-col form-group">
           <label for="crawlableID">
-            Uncrawlable data?
+            Uncrawlable content?
           </label>
           <br>
-          <input type="checkbox" class="form-control" id="crawlableID" name="crawlableID" value="Non-crawlable"/>
+          <input type="checkbox" class="form-control" id="crawlableID" name="crawlableID" value="Yes"/>
         </div>
         <div class="clear"></div>
         <h3 id="success"></h3>
