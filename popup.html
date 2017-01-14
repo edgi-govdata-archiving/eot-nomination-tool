@@ -1,9 +1,14 @@
 <!doctype html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style type="text/css">
-#nominationTool { width: 300px; padding: 5px;}
+#nominationTool { width: 350px; padding: 5px;}
 #success { color: green; }
 #error { color: red; }
+div.quick-col {max-width: 48%; padding-right:2%; float:left;}
+div.clear{clear:both;}
+.form-group {margin-bottom: 10px;}
+.agency-code input, #subprimerID { width: 70px; display: inline-block; }
+html, body {min-height: 600px;}
 </style>
 <div id="nominationTool">
   <div class="row">
@@ -23,8 +28,6 @@
           </label>
           <input required type="text" class="form-control" id="url" name="url"/>
         </div>
-
-
         <!-- Agency -->
         <div class="form-group">
           <select class="form-control" id="agency" name="agency" required>
@@ -323,7 +326,8 @@
             <option value="Multi-Family Housing Office">Multi-Family Housing Office</option>
             <option value="Music Division">Music Division</option>
             <option value="National Advisory Council on Indian Education">National Advisory Council on Indian Education</option>
-            <option value="National Aeronautics and Space Administration">National Aeronautics and Space Administration</option>
+            <option value="National Aeronautics and Space Administration: Science Mission Directorate">National Aeronautics and Space Administration: Science Mission Directorate</option>
+            <option value="National Aeronautics and Space Administration: Sciences and Exploration Directorate">National Aeronautics and Space Administration: Sciences and Exploration Directorate</option>
             <option value="National Agricultural Library">National Agricultural Library</option>
             <option value="National Agricultural Statistics Service">National Agricultural Statistics Service</option>
             <option value="National Air and Space Museum">National Air and Space Museum</option>
@@ -581,11 +585,39 @@
         </div>
         <!-- Event Name -->
         <div class="form-group">
-            <label for="eventName">
-                Event Name
-            </label>
-            <input required type="text" class="form-control" id="eventName" name="eventName"/>
+          <label for="eventName">
+            Event Name
+          </label>
+          <input required type="text" class="form-control" id="eventName" name="eventName"/>
         </div>
+        <!-- Agency Office Code -->
+        <div class="form-group agency-code">
+          <label for="agency-code">
+            Agency Office Code
+          </label>
+          <br>
+          <input required type="number" min="0" max="99" class="form-control" id="agencyID" name="agencyID"/>
+          <input required type="number" min="0" max="99" class="form-control" id="subAgencyID" name="subAgencyID"/>
+          <input required type="number" min="0" max="99" class="form-control" id="organizationID" name="organizationID"/>
+          <input required type="number" min="0" max="99" class="form-control" id="suborgID" name="suborgID"/>
+        </div>
+        <!-- Sub-Primer Num -->
+        <!-- NOTE: This is the only field that is NOT required to submit the form. -->
+        <div class="quick-col form-group">
+          <label for="subprimerID">
+            Sub-Primer Num
+          </label>
+          <br>
+          <input type="number" class="form-control" id="subprimerID" name="subprimerID"/>
+        </div>
+        <div class="quick-col form-group">
+          <label for="crawlableID">
+            Uncrawlable data?
+          </label>
+          <br>
+          <input type="checkbox" class="form-control" id="crawlableID" name="crawlableID" value="Non-crawlable"/>
+        </div>
+        <div class="clear"></div>
         <h3 id="success"></h3>
         <h3 id="error"></h3>
         <button type="submit" id="save" class="btn btn-default" value="Save Bookmark">
