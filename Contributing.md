@@ -1,6 +1,31 @@
-# Contributing and Forking This Tool
+# Contributing
 
-You can use this tool as currently designed for your own event. At present, it pushes all seed nominations to a Google spreasheet owned by the EDGI group in Toronto. If you would like to push to your own spreasheet, the process is pretty simple, but requires small modifications to the sourcecode. 
+In contrast to earlier instructions, _we no longer encourage collaborators to publish their own forks to the Google Chrome Store_. Instead, please just be sure to co-ordinate with EDGI before the event, so we know you will be pushing seeds to our spreadsheet, and to request read access to the results if you don't already have it.  On the other hand, we would still love to have your help improving this extesion!
+
+## Installing from source
+
+1.	Download or Clone this repo: https://github.com/CivicTechTO/presidential-harvest-nomination-tool<
+img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/gitclone.png" width="700" align="middle")/>
+
+2. In Google Chrome Menu -> `Settings` -> `Extensions`, enable Developer Mode
+
+2. Click Load unpacked extension
+<img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/loadExtension.png" width="700" align="middle"/>
+
+3. Choose the folder containing the extension files, and click select
+<img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/selectDirectory.png" width="700" align="middle"/>
+
+4. Extension should appear now
+<img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/postinstallExtension.png" width="700" align="middle"/>
+
+
+## How it works
+
+The extension sends form information to a Google Form, which saves responses to a Google spreadsheet. The extension's form is in `popup.html`, while the variables mapping our form elements to the Google Form are in `popup.js`. `content.js` and `event.js` work together to retrieve the title and URL of the page loaded in the current browser tab. `src/lib/` contains a copy of jquery, which we use for some basic plumbing.
+
+## Forking, if you have to
+
+If for some reaosn you desperately want to fork the tool, you can do so this way:
 
 1. Create your own Google Form.  You can copy [ours](https://docs.google.com/forms/d/1kuwxu2lXYSRpkwBj4o9kwjURZL3hgk-mSFoK4qkC4ZI/edit), or create your own from scratch
     * Once you've created a form, Google will automagically create a spreadsheet in which to store the responses. You can also use the fancy response visualizations tool to get some basic information about submissions.
@@ -13,9 +38,6 @@ You can use this tool as currently designed for your own event. At present, it p
 
 2. For each field name, you will have to identify the corresponding field entry id and update the various field-relate variables. In your browser's developer tools pane, `inspect element` on the input field. You should see `entry.[integer]` in the highlighted code. That is the value for the entry field ID. 
 
-3. The first time a user nominates a seed, they will choose a government agency. Subsequent nominations will default to that same agencies, but the default list here is extensive. If you are modifying the extension anyway, you may want to filter out this list in the `#agency` field of `popup.html`.
-
-Small events can uncomment the "notificationToolUrl"-related lines -- this will permit users to add seeds directly to the nomination tool database. However, there is some worry that large numbers of users could crash the nomination tool server; so for large events, we've commented this out.
+3. The first time a user nominates a seed, they will choose a government agency subagency, organization, and possibly suborganization. Subsequent nominations will default to that same values. If you are modifying the extension anyway, you may want to filter out this list in the `#agency` field of `popup.html`. If you're modifying this extension for  non-environment-related event, you will probably want to imitate or extend the EDGi agency taonomy.  Contact us for more information, and/or read our [agency primers](https://envirodatagov.org/agency-forecasts/), which you will want to modify. 
 
 Contact us for further information!
-
