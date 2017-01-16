@@ -27,6 +27,7 @@ function nominationTool( e ) {
   var EVENTNAME_FIELD = '&entry.1518336548=';
   var URL_FIELD = '&entry.1767515686=';
   var TITLE_FIELD = '&entry.180917746=';
+
   var NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
   var AGENCY_FIELD = '&entry.1285343614=';
   var AGENCY_ID = '&entry.536064408=';
@@ -75,6 +76,10 @@ function nominationTool( e ) {
   }
   if ( localStorage.suborgID !== suborgID ) {
     localStorage.suborgID = suborgID;
+  }
+
+  if ( localStorage.subprimerID !== subprimerID ) {
+    localStorage.subprimerID = subprimerID;
   }
 
   // set value of crawlable fields -- yes or no?
@@ -130,6 +135,9 @@ window.addEventListener( 'load', function( evt ) {
   }
   if ( localStorage.suborgID && localStorage.suborgID !== "null" ) {
     $( '#suborgID' ).val( localStorage.suborgID );
+  }
+  if ( localStorage.subprimerID && localStorage.subprimerID !== "null" ) {
+    $( '#subprimerID' ).val( localStorage.subprimerID );
   }
 
   /* Disable the Department/Agency dropdown bar once the agency code has been entered.

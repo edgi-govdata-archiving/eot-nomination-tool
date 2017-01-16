@@ -42,8 +42,8 @@ img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nominatio
 
 ## Usage 
 
-5. Go to the URL that you wish to nominate, thje click the extension icon near the address bar. A form will pop up beneath the icon. The title and URL will be autofilled with the current URL of the tab, and on subsequent uses your name/email information will also be pre-filled. Similarly, you will be given a list of government agencies to choose from, and asked to submit the name of the event you're working with. On Subsequent uses, these will also be pre-filled, though you can alterhtem at any time just by choosing something else.  
-![Here](docs/img/presidential-ext.gif)
+5. Go to the URL that you wish to nominate, click the extension icon near the address bar. A form will pop up beneath the icon. The title and URL will be autofilled with the current URL of the tab, and on subsequent uses your name/email/event information will also be pre-filled. If you're working with an EDGI subprimer ([found here](https://envirodatagov.org/agency-forecasts/)), you should fill-in the corresponding Agency Office Code that relates to particular subprimers. Filling in the code will autocomplete the agency in the dropdown above. The Sub-primer Num should be filled in correspondingly to particular numbered link in the subprimer you're working with. If the page contains uncrawlable content, note that by clicking the checkbox. On Subsequent uses, these will also be pre-filled, though you can alter them at any time just by choosing something else.
+![Here](docs/img/newExtensionUI_2.png)  
 
 7. Move on to the next URL and hit the extension again
 
