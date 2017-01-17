@@ -38,8 +38,8 @@ If for some reason you desperately want to fork the tool, you can do so this way
 
 2. For each field name, you will have to identify the corresponding field entry id and update the various field-relate variables. In your browser's developer tools pane, `inspect element` on the input field. You should see `entry.[integer]` in the highlighted code. That is the value for the entry field ID. 
 
-3. The first time a user nominates a seed, they will choose a government agency subagency, organization, and possibly suborganization. Subsequent nominations will default to that same values. If you are modifying the extension anyway, you may want to filter out this list in the `#agency` field of `popup.html`. 
+3. The first time a user nominates a seed, they will choose a government agency subagency, organization, and possibly suborganization. Subsequent nominations will default to thaese same values. 
 
-4. If you're modifying this extension for  non-environment-related event, you will probably want to imitate or extend the EDGi agency taonomy.  Contact us for more information, and/or read our [agency primers](https://envirodatagov.org/agency-forecasts/), which you will want to modify. 
+4. If you're modifying this extension for  non-environment-related event, you will probably want to imitate or extend the EDGI agency taxonomy. Contact us for more information, and/or read our [agency primers](https://envirodatagov.org/agency-forecasts/), which you will want to modify. 
 
 Contact us for further information!
