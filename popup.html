@@ -1,11 +1,13 @@
 <!doctype html>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="src/lib/bootstrap-3.3.7.min.css">
 <style type="text/css">
-#nominationTool { width: 350px; padding: 5px;}
+#nominationTool { width: 500px; padding: 5px;}
 #success { color: green; }
 #error { color: red; }
 div.quick-col {max-width: 48%; padding-right:2%; float:left;}
 div.clear{clear:both;}
+div.half {max-width: 50%; float:left;}
+input.checkbox {width:100%; margin-left:auto; margin-right:auto;}
 .form-group {margin-bottom: 10px;}
 .agency-code input, #subprimerID { width: 70px; display: inline-block; }
 html, body {min-height: 600px;}
@@ -31,560 +33,560 @@ html, body {min-height: 600px;}
         <!-- Agency -->
         <div class="form-group">
           <select class="form-control" id="agency" name="agency" required>
-            <option value="Adjutant General's Office (Army)">Adjutant General's Office (Army)</option>
-            <option value="Administration for Children and Families">Administration for Children and Families</option>
-            <option value="Administrative Office of U.S. Courts">Administrative Office of U.S. Courts</option>
-            <option value="Administrator for Research and Acquisitions">Administrator for Research and Acquisitions</option>
-            <option value="Advisory Committee on the Records of Congress">Advisory Committee on the Records of Congress</option>
-            <option value="Advisory Council on Historic Preservation">Advisory Council on Historic Preservation</option>
-            <option value="Aerospace Medicine Office">Aerospace Medicine Office</option>
-            <option value="African and Middle Eastern Division">African and Middle Eastern Division</option>
-            <option value="Aging Administration">Aging Administration</option>
-            <option value="Agricultural Marketing Service">Agricultural Marketing Service</option>
-            <option value="Agricultural Research Service">Agricultural Research Service</option>
-            <option value="Agriculture Department">Agriculture Department</option>
-            <option value="Air and Radiation">Air and Radiation</option>
-            <option value="Air Force Academy">Air Force Academy</option>
-            <option value="Air Force Department">Air Force Department</option>
-            <option value="Air Force Office of the Surgeon General">Air Force Office of the Surgeon General</option>
-            <option value="Air Traffic Operations Service">Air Traffic Operations Service</option>
-            <option value="Aircraft Certification Service">Aircraft Certification Service</option>
-            <option value="Airport Planning and Programming Office">Airport Planning and Programming Office</option>
-            <option value="Airport Safety and Standards Office">Airport Safety and Standards Office</option>
-            <option value="Alcohol and Tobacco Tax and Trade Bureau">Alcohol and Tobacco Tax and Trade Bureau</option>
-            <option value="American Battle Monuments Commission">American Battle Monuments Commission</option>
-            <option value="American Folklife Center">American Folklife Center</option>
-            <option value="American Forces Information Service">American Forces Information Service</option>
-            <option value="American Historical Association">American Historical Association</option>
-            <option value="Animal and Plant Health Inspection Service">Animal and Plant Health Inspection Service</option>
-            <option value="Appalachian Regional Commission">Appalachian Regional Commission</option>
-            <option value="Apprenticeship Training, Employer and Labor Services (OATELS)">Apprenticeship Training, Employer and Labor Services (OATELS)</option>
-            <option value="Architect of the Capitol">Architect of the Capitol</option>
-            <option value="Architectural and Transportation Barriers Compliance Board (Access Board)">Architectural and Transportation Barriers Compliance Board (Access Board)</option>
-            <option value="Arms Control and International Security">Arms Control and International Security</option>
-            <option value="Arms Control Bureau">Arms Control Bureau</option>
-            <option value="Army Command and General Staff College">Army Command and General Staff College</option>
-            <option value="Army Department">Army Department</option>
-            <option value="Army Electronics Research and Development Command">Army Electronics Research and Development Command</option>
-            <option value="Army Medical Department">Army Medical Department</option>
-            <option value="Army Ordnance Corps">Army Ordnance Corps</option>
-            <option value="Asian Division">Asian Division</option>
-            <option value="Biological Resources Division">Biological Resources Division</option>
-            <option value="Bonneville Power Administration">Bonneville Power Administration</option>
-            <option value="Border and Transportation Security">Border and Transportation Security</option>
-            <option value="Broadcasting Board of Governors">Broadcasting Board of Governors</option>
-            <option value="Bureau of Alcohol, Tobacco, Firearms, and Explosives">Bureau of Alcohol, Tobacco, Firearms, and Explosives</option>
-            <option value="Bureau of Consular Affairs">Bureau of Consular Affairs</option>
-            <option value="Bureau of Health Professions">Bureau of Health Professions</option>
-            <option value="Bureau of Industry and Security">Bureau of Industry and Security</option>
-            <option value="Bureau of Ocean Energy Management, Regulation and Enforcement">Bureau of Ocean Energy Management, Regulation and Enforcement</option>
-            <option value="Bureau of Primary Health Care">Bureau of Primary Health Care</option>
-            <option value="Bureau of Transportation Statistics">Bureau of Transportation Statistics</option>
-            <option value="Cataloging Directorate">Cataloging Directorate</option>
-            <option value="Cataloging Policy and Support Office">Cataloging Policy and Support Office</option>
-            <option value="Census Bureau">Census Bureau</option>
-            <option value="Center for Biologics Evaluation and Research">Center for Biologics Evaluation and Research</option>
-            <option value="Center for Devices and Radiological Health">Center for Devices and Radiological Health</option>
-            <option value="Center For Drug Evaluation and Research">Center For Drug Evaluation and Research</option>
-            <option value="Center for Food Safety and Applied Nutrition">Center for Food Safety and Applied Nutrition</option>
-            <option value="Center for Medicaid and State Operations">Center for Medicaid and State Operations</option>
-            <option value="Center for Medicare Management">Center for Medicare Management</option>
-            <option value="Center for Veterinary Medicine">Center for Veterinary Medicine</option>
-            <option value="Centers for Disease Control and Prevention">Centers for Disease Control and Prevention</option>
-            <option value="Centers for Medicare and Medicaid Services">Centers for Medicare and Medicaid Services</option>
-            <option value="Central Intelligence Agency">Central Intelligence Agency</option>
-            <option value="Chemical Corps">Chemical Corps</option>
-            <option value="Chemical Emergency Preparedness and Prevention Office">Chemical Emergency Preparedness and Prevention Office</option>
-            <option value="Chief of Naval Reserve">Chief of Naval Reserve</option>
-            <option value="Child Care Bureau">Child Care Bureau</option>
-            <option value="Child Support Enforcement Office">Child Support Enforcement Office</option>
-            <option value="Children, Youth and Families Administration">Children, Youth and Families Administration</option>
-            <option value="Children's Bureau">Children's Bureau</option>
-            <option value="Citizenship and Immigration Services">Citizenship and Immigration Services</option>
-            <option value="Civil Rights Commission">Civil Rights Commission</option>
-            <option value="Clinical Standards and Quality Office">Clinical Standards and Quality Office</option>
-            <option value="Coast Guard">Coast Guard</option>
-            <option value="Commerce Department">Commerce Department</option>
-            <option value="Commission on Security and Cooperation in Europe">Commission on Security and Cooperation in Europe</option>
-            <option value="Commissions, Committees, and Boards">Commissions, Committees, and Boards</option>
-            <option value="Committee for Purchase from the Blind and Other Severely Handicapped">Committee for Purchase from the Blind and Other Severely Handicapped</option>
-            <option value="Committee on Agriculture (House)">Committee on Agriculture (House)</option>
-            <option value="Committee on Agriculture, Nutrition, and Forestry (Senate)">Committee on Agriculture, Nutrition, and Forestry (Senate)</option>
-            <option value="Committee on Appropriations (House)">Committee on Appropriations (House)</option>
-            <option value="Committee on Appropriations (Senate)">Committee on Appropriations (Senate)</option>
-            <option value="Committee on Armed Services (House)">Committee on Armed Services (House)</option>
-            <option value="Committee on Armed Services (Senate)">Committee on Armed Services (Senate)</option>
-            <option value="Committee on Banking, Housing, and Urban Affairs (Senate)">Committee on Banking, Housing, and Urban Affairs (Senate)</option>
-            <option value="Committee on Commerce, Science and Transportation (Senate)">Committee on Commerce, Science and Transportation (Senate)</option>
-            <option value="Committee on Education and Labor (House)">Committee on Education and Labor (House)</option>
-            <option value="Committee on Energy and Commerce (House)">Committee on Energy and Commerce (House)</option>
-            <option value="Committee on Energy and Natural Resources (Senate)">Committee on Energy and Natural Resources (Senate)</option>
-            <option value="Committee on Environment and Public Works (Senate)">Committee on Environment and Public Works (Senate)</option>
-            <option value="Committee on Finance (Senate)">Committee on Finance (Senate)</option>
-            <option value="Committee on Financial Services (House)">Committee on Financial Services (House)</option>
-            <option value="Committee on Foreign Affairs (House)">Committee on Foreign Affairs (House)</option>
-            <option value="Committee on Foreign Relations (Senate)">Committee on Foreign Relations (Senate)</option>
-            <option value="Committee on Health, Education, Labor, &amp; Pensions (Senate)">Committee on Health, Education, Labor, &amp; Pensions (Senate)</option>
-            <option value="Committee on Homeland Security (House)">Committee on Homeland Security (House)</option>
-            <option value="Committee on Homeland Security and Governmental Affairs (Senate)">Committee on Homeland Security and Governmental Affairs (Senate)</option>
-            <option value="Committee on House Administration (House)">Committee on House Administration (House)</option>
-            <option value="Committee on Indian Affairs (Senate)">Committee on Indian Affairs (Senate)</option>
-            <option value="Committee on International Relations (House)">Committee on International Relations (House)</option>
-            <option value="Committee on Natural Resources (House)">Committee on Natural Resources (House)</option>
-            <option value="Committee on Oversight and Government Reform (House)">Committee on Oversight and Government Reform (House)</option>
-            <option value="Committee on Rules (House)">Committee on Rules (House)</option>
-            <option value="Committee on Rules and Administration (Senate)">Committee on Rules and Administration (Senate)</option>
-            <option value="Committee on Science and Technology (House)">Committee on Science and Technology (House)</option>
-            <option value="Committee on Small Business (House)">Committee on Small Business (House)</option>
-            <option value="Committee on Small Business &amp; Entrepreneurship (Senate)">Committee on Small Business &amp; Entrepreneurship (Senate)</option>
-            <option value="Committee on Standards of Official Conduct (House)">Committee on Standards of Official Conduct (House)</option>
-            <option value="Committee on the Budget (House)">Committee on the Budget (House)</option>
-            <option value="Committee on the Budget (Senate)">Committee on the Budget (Senate)</option>
-            <option value="Committee on the Judiciary (House)">Committee on the Judiciary (House)</option>
-            <option value="Committee on the Judiciary (Senate)">Committee on the Judiciary (Senate)</option>
-            <option value="Committee on Transportation and Infrastructure (House)">Committee on Transportation and Infrastructure (House)</option>
-            <option value="Committee on Veterans' Affairs (House)">Committee on Veterans' Affairs (House)</option>
-            <option value="Committee on Veterans' Affairs (Senate)">Committee on Veterans' Affairs (Senate)</option>
-            <option value="Committee on Ways and Means (House)">Committee on Ways and Means (House)</option>
-            <option value="Commodity Credit Corporation">Commodity Credit Corporation</option>
-            <option value="Commodity Futures Trading Commission">Commodity Futures Trading Commission</option>
-            <option value="Community Oriented Policing Services">Community Oriented Policing Services</option>
-            <option value="Community Relations Service">Community Relations Service</option>
-            <option value="Comptroller of Currency">Comptroller of Currency</option>
-            <option value="Congress">Congress</option>
-            <option value="Congressional Budget Office">Congressional Budget Office</option>
-            <option value="Congressional Research Service">Congressional Research Service</option>
-            <option value="Congressional-Executive Commission on China">Congressional-Executive Commission on China</option>
-            <option value="Consumer Information Center">Consumer Information Center</option>
-            <option value="Consumer Product Safety Commission">Consumer Product Safety Commission</option>
-            <option value="Cooperative State Research, Education and Extension Service">Cooperative State Research, Education and Extension Service</option>
-            <option value="Copyright Office">Copyright Office</option>
-            <option value="Council on Environmental Quality">Council on Environmental Quality</option>
-            <option value="Court Services and Offender Supervision Agency">Court Services and Offender Supervision Agency</option>
-            <option value="Customs and Border Protection">Customs and Border Protection</option>
-            <option value="Defense Base Closure and Realignment Commission">Defense Base Closure and Realignment Commission</option>
-            <option value="Defense Department">Defense Department</option>
-            <option value="Defense Information Systems Agency">Defense Information Systems Agency</option>
-            <option value="Defense Intelligence Agency">Defense Intelligence Agency</option>
-            <option value="Defense Logistics Agency">Defense Logistics Agency</option>
-            <option value="Defense Nuclear Facilities Safety Board">Defense Nuclear Facilities Safety Board</option>
-            <option value="Defense Technical Information Center">Defense Technical Information Center</option>
-            <option value="Defense Threat Reduction Agency">Defense Threat Reduction Agency</option>
-            <option value="Developmental Disabilities Administration">Developmental Disabilities Administration</option>
-            <option value="Disability Employment Policy Office (ODEP)">Disability Employment Policy Office (ODEP)</option>
-            <option value="Domestic Policy Council">Domestic Policy Council</option>
-            <option value="Drug Enforcement Administration">Drug Enforcement Administration</option>
-            <option value="Economic Advisors Council">Economic Advisors Council</option>
-            <option value="Economic Analysis Bureau">Economic Analysis Bureau</option>
-            <option value="Economic Development Administration">Economic Development Administration</option>
-            <option value="Economic Research Service">Economic Research Service</option>
-            <option value="Education Department">Education Department</option>
-            <option value="Educational and Cultural Affairs Bureau">Educational and Cultural Affairs Bureau</option>
-            <option value="Election Assistance Commission">Election Assistance Commission</option>
-            <option value="Elementary and Secondary Education Office">Elementary and Secondary Education Office</option>
-            <option value="Emergency Preparedness and Response">Emergency Preparedness and Response</option>
-            <option value="Employee Benefits Security Administration">Employee Benefits Security Administration</option>
-            <option value="Employees Compensation Appeals Board">Employees Compensation Appeals Board</option>
-            <option value="Employment and Training Administration">Employment and Training Administration</option>
-            <option value="Employment Standards Administration">Employment Standards Administration</option>
-            <option value="Energy Department">Energy Department</option>
-            <option value="Energy Efficiency and Renewable Energy">Energy Efficiency and Renewable Energy</option>
-            <option value="Energy Information Administration">Energy Information Administration</option>
-            <option value="Engineers Corps (Army)">Engineers Corps (Army)</option>
-            <option value="Engraving and Printing Bureau">Engraving and Printing Bureau</option>
-            <option value="Environmental Protection Agency">Environmental Protection Agency</option>
-            <option value="Environmental Research Laboratories">Environmental Research Laboratories</option>
-            <option value="Equal Employment Opportunity Commission">Equal Employment Opportunity Commission</option>
-            <option value="European Division">European Division</option>
-            <option value="Executive Office for the United States Attorneys">Executive Office for the United States Attorneys</option>
-            <option value="Executive Office of the President">Executive Office of the President</option>
-            <option value="Export-Import Bank of United States">Export-Import Bank of United States</option>
-            <option value="Family and Youth Services Bureau">Family and Youth Services Bureau</option>
-            <option value="Farm Credit Administration">Farm Credit Administration</option>
-            <option value="Farm Credit System Insurance Corporation">Farm Credit System Insurance Corporation</option>
-            <option value="Farm Service Agency">Farm Service Agency</option>
-            <option value="Federal Aviation Administration">Federal Aviation Administration</option>
-            <option value="Federal Bureau of Investigation">Federal Bureau of Investigation</option>
-            <option value="Federal Communications Commission">Federal Communications Commission</option>
-            <option value="Federal Crop Insurance Corporation">Federal Crop Insurance Corporation</option>
-            <option value="Federal Deposit Insurance Corporation">Federal Deposit Insurance Corporation</option>
-            <option value="Federal Election Commission">Federal Election Commission</option>
-            <option value="Federal Emergency Management Administration (FEMA)">Federal Emergency Management Administration (FEMA)</option>
-            <option value="Federal Energy Regulatory Commission">Federal Energy Regulatory Commission</option>
-            <option value="Federal Executive Board">Federal Executive Board</option>
-            <option value="Federal Financial Institutions Examination Council">Federal Financial Institutions Examination Council</option>
-            <option value="Federal Geographic Data Committee">Federal Geographic Data Committee</option>
-            <option value="Federal Grain Inspection Service">Federal Grain Inspection Service</option>
-            <option value="Federal Highway Administration">Federal Highway Administration</option>
-            <option value="Federal Housing Administration">Federal Housing Administration</option>
-            <option value="Federal Housing Financing Board">Federal Housing Financing Board</option>
-            <option value="Federal Judicial Center">Federal Judicial Center</option>
-            <option value="Federal Labor Relations Authority">Federal Labor Relations Authority</option>
-            <option value="Federal Maritime Commission">Federal Maritime Commission</option>
-            <option value="Federal Mediation and Conciliation Service">Federal Mediation and Conciliation Service</option>
-            <option value="Federal Mine Safety and Health Review Commission">Federal Mine Safety and Health Review Commission</option>
-            <option value="Federal Motor Carrier Safety Administration">Federal Motor Carrier Safety Administration</option>
-            <option value="Federal Railroad Administration">Federal Railroad Administration</option>
-            <option value="Federal Register Office">Federal Register Office</option>
-            <option value="Federal Reserve System Board of Governors">Federal Reserve System Board of Governors</option>
-            <option value="Federal Retirement Thrift Investment Board">Federal Retirement Thrift Investment Board</option>
-            <option value="Federal Supply Service">Federal Supply Service</option>
-            <option value="Federal Technology Service">Federal Technology Service</option>
-            <option value="Federal Trade Commission">Federal Trade Commission</option>
-            <option value="Federal Transit Administration">Federal Transit Administration</option>
-            <option value="Financial Literacy and Education Commission">Financial Literacy and Education Commission</option>
-            <option value="Financial Management Service">Financial Management Service</option>
-            <option value="Fine Arts Commission">Fine Arts Commission</option>
-            <option value="Fiscal Service">Fiscal Service</option>
-            <option value="Fish and Wildlife Service">Fish and Wildlife Service</option>
-            <option value="Flight Standards Service">Flight Standards Service</option>
-            <option value="Food and Drug Administration">Food and Drug Administration</option>
-            <option value="Food and Nutrition Service">Food and Nutrition Service</option>
-            <option value="Food Safety and Inspection Service">Food Safety and Inspection Service</option>
-            <option value="Foreign Agricultural Service">Foreign Agricultural Service</option>
-            <option value="Foreign Broadcast Information Service">Foreign Broadcast Information Service</option>
-            <option value="Foreign-Trade Zones Board">Foreign-Trade Zones Board</option>
-            <option value="Forest Service">Forest Service</option>
-            <option value="Freer Gallery of Art">Freer Gallery of Art</option>
-            <option value="General Services Administration">General Services Administration</option>
-            <option value="Geographic Names Board">Geographic Names Board</option>
-            <option value="Geography and Map Division">Geography and Map Division</option>
-            <option value="Geological Survey">Geological Survey</option>
-            <option value="Government Accountability Office">Government Accountability Office</option>
-            <option value="Government Printing Office">Government Printing Office</option>
-            <option value="Head Start Bureau">Head Start Bureau</option>
-            <option value="Health and Human Services Department">Health and Human Services Department</option>
-            <option value="Health Resources and Services Administration">Health Resources and Services Administration</option>
-            <option value="Healthcare Research and Quality Agency">Healthcare Research and Quality Agency</option>
-            <option value="Hirshhorn Museum and Sculpture Garden">Hirshhorn Museum and Sculpture Garden</option>
-            <option value="Hispanic Division">Hispanic Division</option>
-            <option value="HIV/AIDS Bureau">HIV/AIDS Bureau</option>
-            <option value="Homeland Security">Homeland Security</option>
-            <option value="House of Representatives">House of Representatives</option>
-            <option value="Housing and Urban Development Department">Housing and Urban Development Department</option>
-            <option value="Humanities and Social Sciences Division">Humanities and Social Sciences Division</option>
-            <option value="Immigration and Customs Enforcement">Immigration and Customs Enforcement</option>
-            <option value="Immigration and Naturalization Service">Immigration and Naturalization Service</option>
-            <option value="Indian Affairs Bureau">Indian Affairs Bureau</option>
-            <option value="Indian Health Service">Indian Health Service</option>
-            <option value="Information Analysis and Infrastructure Protection">Information Analysis and Infrastructure Protection</option>
-            <option value="Institute of Education Sciences">Institute of Education Sciences</option>
-            <option value="Institute of Museum and Library Services">Institute of Museum and Library Services</option>
-            <option value="Inter-American Foundation">Inter-American Foundation</option>
-            <option value="Interagency Council on the Homelessness">Interagency Council on the Homelessness</option>
-            <option value="Interior Department">Interior Department</option>
-            <option value="Internal Revenue Service">Internal Revenue Service</option>
-            <option value="International Broadcasting Bureau">International Broadcasting Bureau</option>
-            <option value="International Development Agency">International Development Agency</option>
-            <option value="International Information Programs">International Information Programs</option>
-            <option value="International Labor Affairs Bureau">International Labor Affairs Bureau</option>
-            <option value="International Trade Administration">International Trade Administration</option>
-            <option value="International Trade Commission">International Trade Commission</option>
-            <option value="Interstate Commerce Commission">Interstate Commerce Commission</option>
-            <option value="Japan-United States Friendship Commission">Japan-United States Friendship Commission</option>
-            <option value="John E. Fogarty International Center for Advanced Study in the Health Sciences">John E. Fogarty International Center for Advanced Study in the Health Sciences</option>
-            <option value="Joint Chiefs of Staff">Joint Chiefs of Staff</option>
-            <option value="Joint Committee on Printing">Joint Committee on Printing</option>
-            <option value="Joint Committee on Taxation">Joint Committee on Taxation</option>
-            <option value="Joint Committee on the Library">Joint Committee on the Library</option>
-            <option value="Joint Economic Committee">Joint Economic Committee</option>
-            <option value="Joint Financial Management Improvement Program">Joint Financial Management Improvement Program</option>
-            <option value="Judge Advocate General (Navy)">Judge Advocate General (Navy)</option>
-            <option value="Judge Advocate General of Air Force">Judge Advocate General of Air Force</option>
-            <option value="Judge Advocate General's Office (Army)">Judge Advocate General's Office (Army)</option>
-            <option value="Judiciary">Judiciary</option>
-            <option value="Justice Assistance Bureau">Justice Assistance Bureau</option>
-            <option value="Justice Department">Justice Department</option>
-            <option value="Justice Statistics Bureau">Justice Statistics Bureau</option>
-            <option value="Juvenile Justice and Delinquency Prevention Office">Juvenile Justice and Delinquency Prevention Office</option>
-            <option value="Labor Department">Labor Department</option>
-            <option value="Labor Statistics Bureau">Labor Statistics Bureau</option>
-            <option value="Land Management Bureau">Land Management Bureau</option>
-            <option value="Law Library">Law Library</option>
-            <option value="Legal Services Corporation">Legal Services Corporation</option>
-            <option value="Library of Congress">Library of Congress</option>
-            <option value="Library Services (Includes Cataloging Distribution Service Division)">Library Services (Includes Cataloging Distribution Service Division)</option>
-            <option value="Management and Budget Office">Management and Budget Office</option>
-            <option value="Manuscript Division">Manuscript Division</option>
-            <option value="Marine Corps">Marine Corps</option>
-            <option value="Marine Mammal Commission">Marine Mammal Commission</option>
-            <option value="Maritime Administration">Maritime Administration</option>
-            <option value="Marshals Service">Marshals Service</option>
-            <option value="Maternal and Child Health Bureau">Maternal and Child Health Bureau</option>
-            <option value="Medicare Payment Advisory Commission (MedPAC)">Medicare Payment Advisory Commission (MedPAC)</option>
-            <option value="Medicine and Surgery Bureau (Navy)">Medicine and Surgery Bureau (Navy)</option>
-            <option value="Merit Systems Protection Board">Merit Systems Protection Board</option>
-            <option value="Migratory Bird Conservation Commission">Migratory Bird Conservation Commission</option>
-            <option value="Military Academy West Point">Military Academy West Point</option>
-            <option value="Military History Center">Military History Center</option>
-            <option value="Military Sealift Command">Military Sealift Command</option>
-            <option value="Mine Safety and Health Administration">Mine Safety and Health Administration</option>
-            <option value="Minerals Management Service">Minerals Management Service</option>
-            <option value="Minority Business Development Agency">Minority Business Development Agency</option>
-            <option value="Mint Bureau">Mint Bureau</option>
-            <option value="Motion Picture, Broadcasting and Recorded Sound Division">Motion Picture, Broadcasting and Recorded Sound Division</option>
-            <option value="Multi-Family Housing Office">Multi-Family Housing Office</option>
-            <option value="Music Division">Music Division</option>
-            <option value="National Advisory Council on Indian Education">National Advisory Council on Indian Education</option>
-            <option value="National Aeronautics and Space Administration: Science Mission Directorate">National Aeronautics and Space Administration: Science Mission Directorate</option>
-            <option value="National Aeronautics and Space Administration: Sciences and Exploration Directorate">National Aeronautics and Space Administration: Sciences and Exploration Directorate</option>
-            <option value="National Agricultural Library">National Agricultural Library</option>
-            <option value="National Agricultural Statistics Service">National Agricultural Statistics Service</option>
-            <option value="National Air and Space Museum">National Air and Space Museum</option>
-            <option value="National Archives and Records Administration">National Archives and Records Administration</option>
-            <option value="National Cancer Institute">National Cancer Institute</option>
-            <option value="National Capital Planning Commission">National Capital Planning Commission</option>
-            <option value="National Center for Chronic Disease Prevention and Health Promotion">National Center for Chronic Disease Prevention and Health Promotion</option>
-            <option value="National Center for Complementary and Alternative Medicine">National Center for Complementary and Alternative Medicine</option>
-            <option value="National Center for Education Evaluation and Regional Assistance (NCEE)">National Center for Education Evaluation and Regional Assistance (NCEE)</option>
-            <option value="National Center for Education Research (NCER)">National Center for Education Research (NCER)</option>
-            <option value="National Center for Education Statistics">National Center for Education Statistics</option>
-            <option value="National Center for Environmental Health">National Center for Environmental Health</option>
-            <option value="National Center for Health Statistics">National Center for Health Statistics</option>
-            <option value="National Center for HIV, STD and TB Prevention">National Center for HIV, STD and TB Prevention</option>
-            <option value="National Center for Infectious Diseases">National Center for Infectious Diseases</option>
-            <option value="National Center for Injury Prevention and Control">National Center for Injury Prevention and Control</option>
-            <option value="National Centers for Environmental Prediction">National Centers for Environmental Prediction</option>
-            <option value="National Climatic Data Center">National Climatic Data Center</option>
-            <option value="National Commission on Libraries and Information Science">National Commission on Libraries and Information Science</option>
-            <option value="National Council on Disability">National Council on Disability</option>
-            <option value="National Credit Union Administration">National Credit Union Administration</option>
-            <option value="National Defense University">National Defense University</option>
-            <option value="National Endowment for the Arts">National Endowment for the Arts</option>
-            <option value="National Endowment for the Humanities">National Endowment for the Humanities</option>
-            <option value="National Energy Technology Laboratory (NETL)">National Energy Technology Laboratory (NETL)</option>
-            <option value="National Environmental Satellite, Data, and Information Service">National Environmental Satellite, Data, and Information Service</option>
-            <option value="National Eye Institute">National Eye Institute</option>
-            <option value="National Foundation on the Arts and the Humanities">National Foundation on the Arts and the Humanities</option>
-            <option value="National Gallery of Art">National Gallery of Art</option>
-            <option value="National Geospatial-Intelligence Agency">National Geospatial-Intelligence Agency</option>
-            <option value="National Guard Bureau">National Guard Bureau</option>
-            <option value="National Heart, Lung, and Blood Institute">National Heart, Lung, and Blood Institute</option>
-            <option value="National Highway Traffic Safety Administration">National Highway Traffic Safety Administration</option>
-            <option value="National Immunization Program">National Immunization Program</option>
-            <option value="National Institute for Literacy">National Institute for Literacy</option>
-            <option value="National Institute for Occupational Safety and Health">National Institute for Occupational Safety and Health</option>
-            <option value="National Institute of Allergy and Infectious Diseases">National Institute of Allergy and Infectious Diseases</option>
-            <option value="National Institute of Arthritis and Musculoskeletal and Skin Diseases">National Institute of Arthritis and Musculoskeletal and Skin Diseases</option>
-            <option value="National Institute of Child Health and Human Development">National Institute of Child Health and Human Development</option>
-            <option value="National Institute of Corrections">National Institute of Corrections</option>
-            <option value="National Institute of Dental and Craniofacial Research">National Institute of Dental and Craniofacial Research</option>
-            <option value="National Institute of Diabetes and Digestive and Kidney Diseases">National Institute of Diabetes and Digestive and Kidney Diseases</option>
-            <option value="National Institute of Environmental Health Sciences">National Institute of Environmental Health Sciences</option>
-            <option value="National Institute of General Medical Sciences">National Institute of General Medical Sciences</option>
-            <option value="National Institute of Justice">National Institute of Justice</option>
-            <option value="National Institute of Mental Health">National Institute of Mental Health</option>
-            <option value="National Institute of Neurological Disorders and Stroke">National Institute of Neurological Disorders and Stroke</option>
-            <option value="National Institute of Standards and Technology (NIST)">National Institute of Standards and Technology (NIST)</option>
-            <option value="National Institute on Aging">National Institute on Aging</option>
-            <option value="National Institute on Alcohol Abuse and Alcoholism">National Institute on Alcohol Abuse and Alcoholism</option>
-            <option value="National Institute on Deafness and Other Communication Disorders">National Institute on Deafness and Other Communication Disorders</option>
-            <option value="National Institute on Drug Abuse">National Institute on Drug Abuse</option>
-            <option value="National Institutes of Health">National Institutes of Health</option>
-            <option value="National Labor Relations Board">National Labor Relations Board</option>
-            <option value="National Library of Medicine">National Library of Medicine</option>
-            <option value="National Library Service for the Blind and Physically Handicapped">National Library Service for the Blind and Physically Handicapped</option>
-            <option value="National Marine Fisheries Service">National Marine Fisheries Service</option>
-            <option value="National Mediation Board">National Mediation Board</option>
-            <option value="National Museum of African Art">National Museum of African Art</option>
-            <option value="National Museum of American Art">National Museum of American Art</option>
-            <option value="National Museum of American History/National Museum of Natural History">National Museum of American History/National Museum of Natural History</option>
-            <option value="National Museum of the American Indian">National Museum of the American Indian</option>
-            <option value="National Nuclear Security Administration">National Nuclear Security Administration</option>
-            <option value="National Ocean Service">National Ocean Service</option>
-            <option value="National Oceanic and Atmospheric Administration">National Oceanic and Atmospheric Administration</option>
-            <option value="National Oceanographic Data Center">National Oceanographic Data Center</option>
-            <option value="National Park Service">National Park Service</option>
-            <option value="National Portrait Gallery">National Portrait Gallery</option>
-            <option value="National Renewable Energy Laboratory (NREL)">National Renewable Energy Laboratory (NREL)</option>
-            <option value="National Science Foundation">National Science Foundation</option>
-            <option value="National Senior Service Corps">National Senior Service Corps</option>
-            <option value="National Technical Information Service">National Technical Information Service</option>
-            <option value="National Telecommunications and Information Administration">National Telecommunications and Information Administration</option>
-            <option value="National Transportation Safety Board">National Transportation Safety Board</option>
-            <option value="National Weather Service">National Weather Service</option>
-            <option value="National Women's Business Council">National Women's Business Council</option>
-            <option value="Native Americans Administration">Native Americans Administration</option>
-            <option value="Natural Resources Conservation Service">Natural Resources Conservation Service</option>
-            <option value="Natural Resources Library">Natural Resources Library</option>
-            <option value="Naval Academy">Naval Academy</option>
-            <option value="Naval Air Systems Command">Naval Air Systems Command</option>
-            <option value="Naval Doctrine Command">Naval Doctrine Command</option>
-            <option value="Naval Education and Training Command">Naval Education and Training Command</option>
-            <option value="Naval Facilities Engineering Command">Naval Facilities Engineering Command</option>
-            <option value="Naval Historical Center">Naval Historical Center</option>
-            <option value="Naval Meteorology and Oceanography Command">Naval Meteorology and Oceanography Command</option>
-            <option value="Naval Observatory">Naval Observatory</option>
-            <option value="Naval Operations Office">Naval Operations Office</option>
-            <option value="Naval Ordnance Systems Command">Naval Ordnance Systems Command</option>
-            <option value="Naval Research Office">Naval Research Office</option>
-            <option value="Naval Sea Systems Command">Naval Sea Systems Command</option>
-            <option value="Naval Supply Systems Command">Naval Supply Systems Command</option>
-            <option value="Naval War College, Newport">Naval War College, Newport</option>
-            <option value="Navy Department">Navy Department</option>
-            <option value="Navy Personnel Command">Navy Personnel Command</option>
-            <option value="North American Commission for Environmental Cooperation">North American Commission for Environmental Cooperation</option>
-            <option value="Northwest Power Planning Council">Northwest Power Planning Council</option>
-            <option value="Nuclear Regulatory Commission">Nuclear Regulatory Commission</option>
-            <option value="Nuclear Waste Technical Review Board">Nuclear Waste Technical Review Board</option>
-            <option value="Occupational Safety and Health Administration">Occupational Safety and Health Administration</option>
-            <option value="Occupational Safety and Health Review Commission">Occupational Safety and Health Review Commission</option>
-            <option value="Oceanic and Atmospheric Research Office">Oceanic and Atmospheric Research Office</option>
-            <option value="Office for Domestic Preparedness">Office for Domestic Preparedness</option>
-            <option value="Office for Victims of Crime">Office for Victims of Crime</option>
-            <option value="Office of Air Quality Planning and Standards">Office of Air Quality Planning and Standards</option>
-            <option value="Office of Civilian Personnel">Office of Civilian Personnel</option>
-            <option value="Office of Communications">Office of Communications</option>
-            <option value="Office of Compliance">Office of Compliance</option>
-            <option value="Office of Congressional Relations">Office of Congressional Relations</option>
-            <option value="Office of Enforcement and Compliance Assurance">Office of Enforcement and Compliance Assurance</option>
-            <option value="Office of Government Ethics">Office of Government Ethics</option>
-            <option value="Office of Hazardous Materials Transportation">Office of Hazardous Materials Transportation</option>
-            <option value="Office of Information Services">Office of Information Services</option>
-            <option value="Office of Inspector General">Office of Inspector General</option>
-            <option value="Office of National Drug Control Policy">Office of National Drug Control Policy</option>
-            <option value="Office of Policy Development and Research">Office of Policy Development and Research</option>
-            <option value="Office of Prevention, Pesticides and Toxic Substances">Office of Prevention, Pesticides and Toxic Substances</option>
-            <option value="Office of Public Health and Science">Office of Public Health and Science</option>
-            <option value="Office of Research and Development">Office of Research and Development</option>
-            <option value="Office of Science and Technology">Office of Science and Technology</option>
-            <option value="Office of Solid Waste and Emergency Response">Office of Solid Waste and Emergency Response</option>
-            <option value="Office of Special Counsel">Office of Special Counsel</option>
-            <option value="Office of the Director of National Intelligence">Office of the Director of National Intelligence</option>
-            <option value="Office of the Inspector General">Office of the Inspector General</option>
-            <option value="Office of the National Counterintelligence Executive">Office of the National Counterintelligence Executive</option>
-            <option value="Office of Thrift Supervision">Office of Thrift Supervision</option>
-            <option value="Office of Transportation and Air Quality">Office of Transportation and Air Quality</option>
-            <option value="Overseas Private Investment Corporation">Overseas Private Investment Corporation</option>
-            <option value="Patent and Trademark Office">Patent and Trademark Office</option>
-            <option value="Peace Corps">Peace Corps</option>
-            <option value="Pension Benefit Guaranty Corporation">Pension Benefit Guaranty Corporation</option>
-            <option value="Permanent Select Committee on Intelligence (House)">Permanent Select Committee on Intelligence (House)</option>
-            <option value="Personnel Appeals Board">Personnel Appeals Board</option>
-            <option value="Personnel Management Office">Personnel Management Office</option>
-            <option value="Pipeline and Hazardous Materials Safety Administration">Pipeline and Hazardous Materials Safety Administration</option>
-            <option value="Postal Regulatory Commission">Postal Regulatory Commission</option>
-            <option value="President of the United States">President of the United States</option>
-            <option value="President's Committee on Mental Retardation">President's Committee on Mental Retardation</option>
-            <option value="President's Council on Physical Fitness and Sports">President's Council on Physical Fitness and Sports</option>
-            <option value="Presidential Scholars Commission">Presidential Scholars Commission</option>
-            <option value="Prints and Photographs Division">Prints and Photographs Division</option>
-            <option value="Prisons Bureau">Prisons Bureau</option>
-            <option value="Privacy and Civil Liberties Oversight Board">Privacy and Civil Liberties Oversight Board</option>
-            <option value="Provost Marshal General (Army)">Provost Marshal General (Army)</option>
-            <option value="Public Buildings Service">Public Buildings Service</option>
-            <option value="Public Debt Bureau">Public Debt Bureau</option>
-            <option value="Quality Assurance Bureau">Quality Assurance Bureau</option>
-            <option value="Quartermaster General of the Army">Quartermaster General of the Army</option>
-            <option value="Radiation &amp; Indoor Air">Radiation &amp; Indoor Air</option>
-            <option value="Railroad Retirement Board">Railroad Retirement Board</option>
-            <option value="Rare Book and Special Collections Division">Rare Book and Special Collections Division</option>
-            <option value="Reclamation Bureau">Reclamation Bureau</option>
-            <option value="Research and Special Programs Administration">Research and Special Programs Administration</option>
-            <option value="Risk Management Agency">Risk Management Agency</option>
-            <option value="Rural Business/Cooperative Service">Rural Business/Cooperative Service</option>
-            <option value="Rural Development">Rural Development</option>
-            <option value="Rural Housing Service">Rural Housing Service</option>
-            <option value="Rural Utilities Service">Rural Utilities Service</option>
-            <option value="Safety Office">Safety Office</option>
-            <option value="Savings Bonds Marketing Office">Savings Bonds Marketing Office</option>
-            <option value="Science and Technology Division">Science and Technology Division</option>
-            <option value="Science and Technology Policy Office">Science and Technology Policy Office</option>
-            <option value="Secret Service">Secret Service</option>
-            <option value="Securities and Exchange Commission">Securities and Exchange Commission</option>
-            <option value="Select and Special Committees (as appointed)">Select and Special Committees (as appointed)</option>
-            <option value="Select Committee on Ethics (Senate)">Select Committee on Ethics (Senate)</option>
-            <option value="Select Committee on Intelligence (Senate)">Select Committee on Intelligence (Senate)</option>
-            <option value="Selective Service System">Selective Service System</option>
-            <option value="Senate">Senate</option>
-            <option value="Serial and Government Publications Division">Serial and Government Publications Division</option>
-            <option value="Small Business Administration">Small Business Administration</option>
-            <option value="Smithsonian Institution">Smithsonian Institution</option>
-            <option value="Social Security Administration">Social Security Administration</option>
-            <option value="Solicitor of Labor Department">Solicitor of Labor Department</option>
-            <option value="Southeastern Power Administration">Southeastern Power Administration</option>
-            <option value="Space and Naval Warfare Systems Command">Space and Naval Warfare Systems Command</option>
-            <option value="Special Committee on Aging (Senate)">Special Committee on Aging (Senate)</option>
-            <option value="Special Counsel Office">Special Counsel Office</option>
-            <option value="Special Education and Rehabilitative Services Office">Special Education and Rehabilitative Services Office</option>
-            <option value="St. Lawrence Seaway Development Corporation">St. Lawrence Seaway Development Corporation</option>
-            <option value="State Department">State Department</option>
-            <option value="Strategic Planning Office">Strategic Planning Office</option>
-            <option value="Substance Abuse and Mental Health Services Administration">Substance Abuse and Mental Health Services Administration</option>
-            <option value="Superintendent of Documents">Superintendent of Documents</option>
-            <option value="Supreme Court">Supreme Court</option>
-            <option value="Surface Mining Office">Surface Mining Office</option>
-            <option value="Surface Transportation Board">Surface Transportation Board</option>
-            <option value="Tax Court">Tax Court</option>
-            <option value="Technology Administration">Technology Administration</option>
-            <option value="Technology Innovation Office">Technology Innovation Office</option>
-            <option value="Technology Transfer">Technology Transfer</option>
-            <option value="Tennessee Valley Authority">Tennessee Valley Authority</option>
-            <option value="The African Development Foundation">The African Development Foundation</option>
-            <option value="The Corporation for National and Community Service">The Corporation for National and Community Service</option>
-            <option value="The Council of Economic Advisers">The Council of Economic Advisers</option>
-            <option value="The Grain Inspection, Packers and Stockyards Administration">The Grain Inspection, Packers and Stockyards Administration</option>
-            <option value="Toxic Substances and Disease Registry Agency">Toxic Substances and Disease Registry Agency</option>
-            <option value="Transportation Department">Transportation Department</option>
-            <option value="Transportation Security Administration">Transportation Security Administration</option>
-            <option value="Treasury Department">Treasury Department</option>
-            <option value="U.S. Arctic Research Commission">U.S. Arctic Research Commission</option>
-            <option value="U.S. Army Air Mobility Research and Development Command">U.S. Army Air Mobility Research and Development Command</option>
-            <option value="U.S. Circuit Courts of Appeals">U.S. Circuit Courts of Appeals</option>
-            <option value="U.S. Climate Change Science Program">U.S. Climate Change Science Program</option>
-            <option value="U.S. Commission for the Preservation of America's Heritage Abroad">U.S. Commission for the Preservation of America's Heritage Abroad</option>
-            <option value="U.S. Commission on International Religious Freedom">U.S. Commission on International Religious Freedom</option>
-            <option value="U.S. Court of Appeals for the Federal Circuit">U.S. Court of Appeals for the Federal Circuit</option>
-            <option value="U.S. Court of Federal Claims">U.S. Court of Federal Claims</option>
-            <option value="U.S. Fire Administration (USFA)">U.S. Fire Administration (USFA)</option>
-            <option value="U.S. Trade and Development Agency">U.S. Trade and Development Agency</option>
-            <option value="United States Advisory Commission on Public Diplomacy">United States Advisory Commission on Public Diplomacy</option>
-            <option value="United States Bankruptcy Court">United States Bankruptcy Court</option>
-            <option value="United States Chemical Safety and Hazard Investigation Board">United States Chemical Safety and Hazard Investigation Board</option>
-            <option value="United States Court of International Trade">United States Court of International Trade</option>
-            <option value="United States Court of Veterans Appeals">United States Court of Veterans Appeals</option>
-            <option value="United States District Court">United States District Court</option>
-            <option value="United States Employment Service">United States Employment Service</option>
-            <option value="United States Holocaust Memorial Council">United States Holocaust Memorial Council</option>
-            <option value="United States Institute of Peace">United States Institute of Peace</option>
-            <option value="United States Parole Commission">United States Parole Commission</option>
-            <option value="United States Postal Service">United States Postal Service</option>
-            <option value="United States Secret Service">United States Secret Service</option>
-            <option value="United States Sentencing Commission">United States Sentencing Commission</option>
-            <option value="United States Trade Representative">United States Trade Representative</option>
-            <option value="United States-China Security Review Commission">United States-China Security Review Commission</option>
-            <option value="Upper Midwest Environmental Sciences Center">Upper Midwest Environmental Sciences Center</option>
-            <option value="US Agency for International Development">US Agency for International Development</option>
-            <option value="Veteran's Employment and Training Service">Veteran's Employment and Training Service</option>
-            <option value="Veterans Affairs Department">Veterans Affairs Department</option>
-            <option value="Vice President of the United States">Vice President of the United States</option>
-            <option value="Violence Against Women Office">Violence Against Women Office</option>
-            <option value="Wage and Hour Division">Wage and Hour Division</option>
-            <option value="Water Office">Water Office</option>
-            <option value="Western Area Power Administration">Western Area Power Administration</option>
-            <option value="Wetlands, Oceans &amp; Watersheds Office">Wetlands, Oceans &amp; Watersheds Office</option>
-            <option value="White House Historical Association">White House Historical Association</option>
-            <option value="Women's Bureau">Women's Bureau</option>
-            <option value="Worker's Compensation Programs Office">Worker's Compensation Programs Office</option>
-            <option value="Workforce Security Office">Workforce Security Office</option>
+            <option>Adjutant General's Office (Army)</option>
+            <option>Administration for Children and Families</option>
+            <option>Administrative Office of U.S. Courts</option>
+            <option>Administrator for Research and Acquisitions</option>
+            <option>Advisory Committee on the Records of Congress</option>
+            <option>Advisory Council on Historic Preservation</option>
+            <option>Aerospace Medicine Office</option>
+            <option>African and Middle Eastern Division</option>
+            <option>Aging Administration</option>
+            <option>Agricultural Marketing Service</option>
+            <option>Agricultural Research Service</option>
+            <option>Agriculture Department</option>
+            <option>Air and Radiation</option>
+            <option>Air Force Academy</option>
+            <option>Air Force Department</option>
+            <option>Air Force Office of the Surgeon General</option>
+            <option>Air Traffic Operations Service</option>
+            <option>Aircraft Certification Service</option>
+            <option>Airport Planning and Programming Office</option>
+            <option>Airport Safety and Standards Office</option>
+            <option>Alcohol and Tobacco Tax and Trade Bureau</option>
+            <option>American Battle Monuments Commission</option>
+            <option>American Folklife Center</option>
+            <option>American Forces Information Service</option>
+            <option>American Historical Association</option>
+            <option>Animal and Plant Health Inspection Service</option>
+            <option>Appalachian Regional Commission</option>
+            <option>Apprenticeship Training, Employer and Labor Services (OATELS)</option>
+            <option>Architect of the Capitol</option>
+            <option>Architectural and Transportation Barriers Compliance Board (Access Board)</option>
+            <option>Arms Control and International Security</option>
+            <option>Arms Control Bureau</option>
+            <option>Army Command and General Staff College</option>
+            <option>Army Department</option>
+            <option>Army Electronics Research and Development Command</option>
+            <option>Army Medical Department</option>
+            <option>Army Ordnance Corps</option>
+            <option>Asian Division</option>
+            <option>Biological Resources Division</option>
+            <option>Bonneville Power Administration</option>
+            <option>Border and Transportation Security</option>
+            <option>Broadcasting Board of Governors</option>
+            <option>Bureau of Alcohol, Tobacco, Firearms, and Explosives</option>
+            <option>Bureau of Consular Affairs</option>
+            <option>Bureau of Health Professions</option>
+            <option>Bureau of Industry and Security</option>
+            <option>Bureau of Ocean Energy Management, Regulation and Enforcement</option>
+            <option>Bureau of Primary Health Care</option>
+            <option>Bureau of Transportation Statistics</option>
+            <option>Cataloging Directorate</option>
+            <option>Cataloging Policy and Support Office</option>
+            <option>Census Bureau</option>
+            <option>Center for Biologics Evaluation and Research</option>
+            <option>Center for Devices and Radiological Health</option>
+            <option>Center For Drug Evaluation and Research</option>
+            <option>Center for Food Safety and Applied Nutrition</option>
+            <option>Center for Medicaid and State Operations</option>
+            <option>Center for Medicare Management</option>
+            <option>Center for Veterinary Medicine</option>
+            <option>Centers for Disease Control and Prevention</option>
+            <option>Centers for Medicare and Medicaid Services</option>
+            <option>Central Intelligence Agency</option>
+            <option>Chemical Corps</option>
+            <option>Chemical Emergency Preparedness and Prevention Office</option>
+            <option>Chief of Naval Reserve</option>
+            <option>Child Care Bureau</option>
+            <option>Child Support Enforcement Office</option>
+            <option>Children, Youth and Families Administration</option>
+            <option>Children's Bureau</option>
+            <option>Citizenship and Immigration Services</option>
+            <option>Civil Rights Commission</option>
+            <option>Clinical Standards and Quality Office</option>
+            <option>Coast Guard</option>
+            <option>Commerce Department</option>
+            <option>Commission on Security and Cooperation in Europe</option>
+            <option>Commissions, Committees, and Boards</option>
+            <option>Committee for Purchase from the Blind and Other Severely Handicapped</option>
+            <option>Committee on Agriculture (House)</option>
+            <option>Committee on Agriculture, Nutrition, and Forestry (Senate)</option>
+            <option>Committee on Appropriations (House)</option>
+            <option>Committee on Appropriations (Senate)</option>
+            <option>Committee on Armed Services (House)</option>
+            <option>Committee on Armed Services (Senate)</option>
+            <option>Committee on Banking, Housing, and Urban Affairs (Senate)</option>
+            <option>Committee on Commerce, Science and Transportation (Senate)</option>
+            <option>Committee on Education and Labor (House)</option>
+            <option>Committee on Energy and Commerce (House)</option>
+            <option>Committee on Energy and Natural Resources (Senate)</option>
+            <option>Committee on Environment and Public Works (Senate)</option>
+            <option>Committee on Finance (Senate)</option>
+            <option>Committee on Financial Services (House)</option>
+            <option>Committee on Foreign Affairs (House)</option>
+            <option>Committee on Foreign Relations (Senate)</option>
+            <option>Committee on Health, Education, Labor, &amp; Pensions (Senate)</option>
+            <option>Committee on Homeland Security (House)</option>
+            <option>Committee on Homeland Security and Governmental Affairs (Senate)</option>
+            <option>Committee on House Administration (House)</option>
+            <option>Committee on Indian Affairs (Senate)</option>
+            <option>Committee on International Relations (House)</option>
+            <option>Committee on Natural Resources (House)</option>
+            <option>Committee on Oversight and Government Reform (House)</option>
+            <option>Committee on Rules (House)</option>
+            <option>Committee on Rules and Administration (Senate)</option>
+            <option>Committee on Science and Technology (House)</option>
+            <option>Committee on Small Business (House)</option>
+            <option>Committee on Small Business &amp; Entrepreneurship (Senate)</option>
+            <option>Committee on Standards of Official Conduct (House)</option>
+            <option>Committee on the Budget (House)</option>
+            <option>Committee on the Budget (Senate)</option>
+            <option>Committee on the Judiciary (House)</option>
+            <option>Committee on the Judiciary (Senate)</option>
+            <option>Committee on Transportation and Infrastructure (House)</option>
+            <option>Committee on Veterans' Affairs (House)</option>
+            <option>Committee on Veterans' Affairs (Senate)</option>
+            <option>Committee on Ways and Means (House)</option>
+            <option>Commodity Credit Corporation</option>
+            <option>Commodity Futures Trading Commission</option>
+            <option>Community Oriented Policing Services</option>
+            <option>Community Relations Service</option>
+            <option>Comptroller of Currency</option>
+            <option>Congress</option>
+            <option>Congressional Budget Office</option>
+            <option>Congressional Research Service</option>
+            <option>Congressional-Executive Commission on China</option>
+            <option>Consumer Information Center</option>
+            <option>Consumer Product Safety Commission</option>
+            <option>Cooperative State Research, Education and Extension Service</option>
+            <option>Copyright Office</option>
+            <option>Council on Environmental Quality</option>
+            <option>Court Services and Offender Supervision Agency</option>
+            <option>Customs and Border Protection</option>
+            <option>Defense Base Closure and Realignment Commission</option>
+            <option>Defense Department</option>
+            <option>Defense Information Systems Agency</option>
+            <option>Defense Intelligence Agency</option>
+            <option>Defense Logistics Agency</option>
+            <option>Defense Nuclear Facilities Safety Board</option>
+            <option>Defense Technical Information Center</option>
+            <option>Defense Threat Reduction Agency</option>
+            <option>Developmental Disabilities Administration</option>
+            <option>Disability Employment Policy Office (ODEP)</option>
+            <option>Domestic Policy Council</option>
+            <option>Drug Enforcement Administration</option>
+            <option>Economic Advisors Council</option>
+            <option>Economic Analysis Bureau</option>
+            <option>Economic Development Administration</option>
+            <option>Economic Research Service</option>
+            <option>Education Department</option>
+            <option>Educational and Cultural Affairs Bureau</option>
+            <option>Election Assistance Commission</option>
+            <option>Elementary and Secondary Education Office</option>
+            <option>Emergency Preparedness and Response</option>
+            <option>Employee Benefits Security Administration</option>
+            <option>Employees Compensation Appeals Board</option>
+            <option>Employment and Training Administration</option>
+            <option>Employment Standards Administration</option>
+            <option>Energy Department</option>
+            <option>Energy Efficiency and Renewable Energy</option>
+            <option>Energy Information Administration</option>
+            <option>Engineers Corps (Army)</option>
+            <option>Engraving and Printing Bureau</option>
+            <option>Environmental Protection Agency</option>
+            <option>Environmental Research Laboratories</option>
+            <option>Equal Employment Opportunity Commission</option>
+            <option>European Division</option>
+            <option>Executive Office for the United States Attorneys</option>
+            <option>Executive Office of the President</option>
+            <option>Export-Import Bank of United States</option>
+            <option>Family and Youth Services Bureau</option>
+            <option>Farm Credit Administration</option>
+            <option>Farm Credit System Insurance Corporation</option>
+            <option>Farm Service Agency</option>
+            <option>Federal Aviation Administration</option>
+            <option>Federal Bureau of Investigation</option>
+            <option>Federal Communications Commission</option>
+            <option>Federal Crop Insurance Corporation</option>
+            <option>Federal Deposit Insurance Corporation</option>
+            <option>Federal Election Commission</option>
+            <option>Federal Emergency Management Administration (FEMA)</option>
+            <option>Federal Energy Regulatory Commission</option>
+            <option>Federal Executive Board</option>
+            <option>Federal Financial Institutions Examination Council</option>
+            <option>Federal Geographic Data Committee</option>
+            <option>Federal Grain Inspection Service</option>
+            <option>Federal Highway Administration</option>
+            <option>Federal Housing Administration</option>
+            <option>Federal Housing Financing Board</option>
+            <option>Federal Judicial Center</option>
+            <option>Federal Labor Relations Authority</option>
+            <option>Federal Maritime Commission</option>
+            <option>Federal Mediation and Conciliation Service</option>
+            <option>Federal Mine Safety and Health Review Commission</option>
+            <option>Federal Motor Carrier Safety Administration</option>
+            <option>Federal Railroad Administration</option>
+            <option>Federal Register Office</option>
+            <option>Federal Reserve System Board of Governors</option>
+            <option>Federal Retirement Thrift Investment Board</option>
+            <option>Federal Supply Service</option>
+            <option>Federal Technology Service</option>
+            <option>Federal Trade Commission</option>
+            <option>Federal Transit Administration</option>
+            <option>Financial Literacy and Education Commission</option>
+            <option>Financial Management Service</option>
+            <option>Fine Arts Commission</option>
+            <option>Fiscal Service</option>
+            <option>Fish and Wildlife Service</option>
+            <option>Flight Standards Service</option>
+            <option>Food and Drug Administration</option>
+            <option>Food and Nutrition Service</option>
+            <option>Food Safety and Inspection Service</option>
+            <option>Foreign Agricultural Service</option>
+            <option>Foreign Broadcast Information Service</option>
+            <option>Foreign-Trade Zones Board</option>
+            <option>Forest Service</option>
+            <option>Freer Gallery of Art</option>
+            <option>General Services Administration</option>
+            <option>Geographic Names Board</option>
+            <option>Geography and Map Division</option>
+            <option>Geological Survey</option>
+            <option>Government Accountability Office</option>
+            <option>Government Printing Office</option>
+            <option>Head Start Bureau</option>
+            <option>Health and Human Services Department</option>
+            <option>Health Resources and Services Administration</option>
+            <option>Healthcare Research and Quality Agency</option>
+            <option>Hirshhorn Museum and Sculpture Garden</option>
+            <option>Hispanic Division</option>
+            <option>HIV/AIDS Bureau</option>
+            <option>Homeland Security</option>
+            <option>House of Representatives</option>
+            <option>Housing and Urban Development Department</option>
+            <option>Humanities and Social Sciences Division</option>
+            <option>Immigration and Customs Enforcement</option>
+            <option>Immigration and Naturalization Service</option>
+            <option>Indian Affairs Bureau</option>
+            <option>Indian Health Service</option>
+            <option>Information Analysis and Infrastructure Protection</option>
+            <option>Institute of Education Sciences</option>
+            <option>Institute of Museum and Library Services</option>
+            <option>Inter-American Foundation</option>
+            <option>Interagency Council on the Homelessness</option>
+            <option>Interior Department</option>
+            <option>Internal Revenue Service</option>
+            <option>International Broadcasting Bureau</option>
+            <option>International Development Agency</option>
+            <option>International Information Programs</option>
+            <option>International Labor Affairs Bureau</option>
+            <option>International Trade Administration</option>
+            <option>International Trade Commission</option>
+            <option>Interstate Commerce Commission</option>
+            <option>Japan-United States Friendship Commission</option>
+            <option>John E. Fogarty International Center for Advanced Study in the Health Sciences</option>
+            <option>Joint Chiefs of Staff</option>
+            <option>Joint Committee on Printing</option>
+            <option>Joint Committee on Taxation</option>
+            <option>Joint Committee on the Library</option>
+            <option>Joint Economic Committee</option>
+            <option>Joint Financial Management Improvement Program</option>
+            <option>Judge Advocate General (Navy)</option>
+            <option>Judge Advocate General of Air Force</option>
+            <option>Judge Advocate General's Office (Army)</option>
+            <option>Judiciary</option>
+            <option>Justice Assistance Bureau</option>
+            <option>Justice Department</option>
+            <option>Justice Statistics Bureau</option>
+            <option>Juvenile Justice and Delinquency Prevention Office</option>
+            <option>Labor Department</option>
+            <option>Labor Statistics Bureau</option>
+            <option>Land Management Bureau</option>
+            <option>Law Library</option>
+            <option>Legal Services Corporation</option>
+            <option>Library of Congress</option>
+            <option>Library Services (Includes Cataloging Distribution Service Division)</option>
+            <option>Management and Budget Office</option>
+            <option>Manuscript Division</option>
+            <option>Marine Corps</option>
+            <option>Marine Mammal Commission</option>
+            <option>Maritime Administration</option>
+            <option>Marshals Service</option>
+            <option>Maternal and Child Health Bureau</option>
+            <option>Medicare Payment Advisory Commission (MedPAC)</option>
+            <option>Medicine and Surgery Bureau (Navy)</option>
+            <option>Merit Systems Protection Board</option>
+            <option>Migratory Bird Conservation Commission</option>
+            <option>Military Academy West Point</option>
+            <option>Military History Center</option>
+            <option>Military Sealift Command</option>
+            <option>Mine Safety and Health Administration</option>
+            <option>Minerals Management Service</option>
+            <option>Minority Business Development Agency</option>
+            <option>Mint Bureau</option>
+            <option>Motion Picture, Broadcasting and Recorded Sound Division</option>
+            <option>Multi-Family Housing Office</option>
+            <option>Music Division</option>
+            <option>National Advisory Council on Indian Education</option>
+            <option>National Aeronautics and Space Administration: Science Mission Directorate</option>
+            <option>National Aeronautics and Space Administration: Sciences and Exploration Directorate</option>
+            <option>National Agricultural Library</option>
+            <option>National Agricultural Statistics Service</option>
+            <option>National Air and Space Museum</option>
+            <option>National Archives and Records Administration</option>
+            <option>National Cancer Institute</option>
+            <option>National Capital Planning Commission</option>
+            <option>National Center for Chronic Disease Prevention and Health Promotion</option>
+            <option>National Center for Complementary and Alternative Medicine</option>
+            <option>National Center for Education Evaluation and Regional Assistance (NCEE)</option>
+            <option>National Center for Education Research (NCER)</option>
+            <option>National Center for Education Statistics</option>
+            <option>National Center for Environmental Health</option>
+            <option>National Center for Health Statistics</option>
+            <option>National Center for HIV, STD and TB Prevention</option>
+            <option>National Center for Infectious Diseases</option>
+            <option>National Center for Injury Prevention and Control</option>
+            <option>National Centers for Environmental Prediction</option>
+            <option>National Climatic Data Center</option>
+            <option>National Commission on Libraries and Information Science</option>
+            <option>National Council on Disability</option>
+            <option>National Credit Union Administration</option>
+            <option>National Defense University</option>
+            <option>National Endowment for the Arts</option>
+            <option>National Endowment for the Humanities</option>
+            <option>National Energy Technology Laboratory (NETL)</option>
+            <option>National Environmental Satellite, Data, and Information Service</option>
+            <option>National Eye Institute</option>
+            <option>National Foundation on the Arts and the Humanities</option>
+            <option>National Gallery of Art</option>
+            <option>National Geospatial-Intelligence Agency</option>
+            <option>National Guard Bureau</option>
+            <option>National Heart, Lung, and Blood Institute</option>
+            <option>National Highway Traffic Safety Administration</option>
+            <option>National Immunization Program</option>
+            <option>National Institute for Literacy</option>
+            <option>National Institute for Occupational Safety and Health</option>
+            <option>National Institute of Allergy and Infectious Diseases</option>
+            <option>National Institute of Arthritis and Musculoskeletal and Skin Diseases</option>
+            <option>National Institute of Child Health and Human Development</option>
+            <option>National Institute of Corrections</option>
+            <option>National Institute of Dental and Craniofacial Research</option>
+            <option>National Institute of Diabetes and Digestive and Kidney Diseases</option>
+            <option>National Institute of Environmental Health Sciences</option>
+            <option>National Institute of General Medical Sciences</option>
+            <option>National Institute of Justice</option>
+            <option>National Institute of Mental Health</option>
+            <option>National Institute of Neurological Disorders and Stroke</option>
+            <option>National Institute of Standards and Technology (NIST)</option>
+            <option>National Institute on Aging</option>
+            <option>National Institute on Alcohol Abuse and Alcoholism</option>
+            <option>National Institute on Deafness and Other Communication Disorders</option>
+            <option>National Institute on Drug Abuse</option>
+            <option>National Institutes of Health</option>
+            <option>National Labor Relations Board</option>
+            <option>National Library of Medicine</option>
+            <option>National Library Service for the Blind and Physically Handicapped</option>
+            <option>National Marine Fisheries Service</option>
+            <option>National Mediation Board</option>
+            <option>National Museum of African Art</option>
+            <option>National Museum of American Art</option>
+            <option>National Museum of American History/National Museum of Natural History</option>
+            <option>National Museum of the American Indian</option>
+            <option>National Nuclear Security Administration</option>
+            <option>National Ocean Service</option>
+            <option>National Oceanic and Atmospheric Administration</option>
+            <option>National Oceanographic Data Center</option>
+            <option>National Park Service</option>
+            <option>National Portrait Gallery</option>
+            <option>National Renewable Energy Laboratory (NREL)</option>
+            <option>National Science Foundation</option>
+            <option>National Senior Service Corps</option>
+            <option>National Technical Information Service</option>
+            <option>National Telecommunications and Information Administration</option>
+            <option>National Transportation Safety Board</option>
+            <option>National Weather Service</option>
+            <option>National Women's Business Council</option>
+            <option>Native Americans Administration</option>
+            <option>Natural Resources Conservation Service</option>
+            <option>Natural Resources Library</option>
+            <option>Naval Academy</option>
+            <option>Naval Air Systems Command</option>
+            <option>Naval Doctrine Command</option>
+            <option>Naval Education and Training Command</option>
+            <option>Naval Facilities Engineering Command</option>
+            <option>Naval Historical Center</option>
+            <option>Naval Meteorology and Oceanography Command</option>
+            <option>Naval Observatory</option>
+            <option>Naval Operations Office</option>
+            <option>Naval Ordnance Systems Command</option>
+            <option>Naval Research Office</option>
+            <option>Naval Sea Systems Command</option>
+            <option>Naval Supply Systems Command</option>
+            <option>Naval War College, Newport</option>
+            <option>Navy Department</option>
+            <option>Navy Personnel Command</option>
+            <option>North American Commission for Environmental Cooperation</option>
+            <option>Northwest Power Planning Council</option>
+            <option>Nuclear Regulatory Commission</option>
+            <option>Nuclear Waste Technical Review Board</option>
+            <option>Occupational Safety and Health Administration</option>
+            <option>Occupational Safety and Health Review Commission</option>
+            <option>Oceanic and Atmospheric Research Office</option>
+            <option>Office for Domestic Preparedness</option>
+            <option>Office for Victims of Crime</option>
+            <option>Office of Air Quality Planning and Standards</option>
+            <option>Office of Civilian Personnel</option>
+            <option>Office of Communications</option>
+            <option>Office of Compliance</option>
+            <option>Office of Congressional Relations</option>
+            <option>Office of Enforcement and Compliance Assurance</option>
+            <option>Office of Government Ethics</option>
+            <option>Office of Hazardous Materials Transportation</option>
+            <option>Office of Information Services</option>
+            <option>Office of Inspector General</option>
+            <option>Office of National Drug Control Policy</option>
+            <option>Office of Policy Development and Research</option>
+            <option>Office of Prevention, Pesticides and Toxic Substances</option>
+            <option>Office of Public Health and Science</option>
+            <option>Office of Research and Development</option>
+            <option>Office of Science and Technology</option>
+            <option>Office of Solid Waste and Emergency Response</option>
+            <option>Office of Special Counsel</option>
+            <option>Office of the Director of National Intelligence</option>
+            <option>Office of the Inspector General</option>
+            <option>Office of the National Counterintelligence Executive</option>
+            <option>Office of Thrift Supervision</option>
+            <option>Office of Transportation and Air Quality</option>
+            <option>Overseas Private Investment Corporation</option>
+            <option>Patent and Trademark Office</option>
+            <option>Peace Corps</option>
+            <option>Pension Benefit Guaranty Corporation</option>
+            <option>Permanent Select Committee on Intelligence (House)</option>
+            <option>Personnel Appeals Board</option>
+            <option>Personnel Management Office</option>
+            <option>Pipeline and Hazardous Materials Safety Administration</option>
+            <option>Postal Regulatory Commission</option>
+            <option>President of the United States</option>
+            <option>President's Committee on Mental Retardation</option>
+            <option>President's Council on Physical Fitness and Sports</option>
+            <option>Presidential Scholars Commission</option>
+            <option>Prints and Photographs Division</option>
+            <option>Prisons Bureau</option>
+            <option>Privacy and Civil Liberties Oversight Board</option>
+            <option>Provost Marshal General (Army)</option>
+            <option>Public Buildings Service</option>
+            <option>Public Debt Bureau</option>
+            <option>Quality Assurance Bureau</option>
+            <option>Quartermaster General of the Army</option>
+            <option>Radiation &amp; Indoor Air</option>
+            <option>Railroad Retirement Board</option>
+            <option>Rare Book and Special Collections Division</option>
+            <option>Reclamation Bureau</option>
+            <option>Research and Special Programs Administration</option>
+            <option>Risk Management Agency</option>
+            <option>Rural Business/Cooperative Service</option>
+            <option>Rural Development</option>
+            <option>Rural Housing Service</option>
+            <option>Rural Utilities Service</option>
+            <option>Safety Office</option>
+            <option>Savings Bonds Marketing Office</option>
+            <option>Science and Technology Division</option>
+            <option>Science and Technology Policy Office</option>
+            <option>Secret Service</option>
+            <option>Securities and Exchange Commission</option>
+            <option>Select and Special Committees (as appointed)</option>
+            <option>Select Committee on Ethics (Senate)</option>
+            <option>Select Committee on Intelligence (Senate)</option>
+            <option>Selective Service System</option>
+            <option>Senate</option>
+            <option>Serial and Government Publications Division</option>
+            <option>Small Business Administration</option>
+            <option>Smithsonian Institution</option>
+            <option>Social Security Administration</option>
+            <option>Solicitor of Labor Department</option>
+            <option>Southeastern Power Administration</option>
+            <option>Space and Naval Warfare Systems Command</option>
+            <option>Special Committee on Aging (Senate)</option>
+            <option>Special Counsel Office</option>
+            <option>Special Education and Rehabilitative Services Office</option>
+            <option>St. Lawrence Seaway Development Corporation</option>
+            <option>State Department</option>
+            <option>Strategic Planning Office</option>
+            <option>Substance Abuse and Mental Health Services Administration</option>
+            <option>Superintendent of Documents</option>
+            <option>Supreme Court</option>
+            <option>Surface Mining Office</option>
+            <option>Surface Transportation Board</option>
+            <option>Tax Court</option>
+            <option>Technology Administration</option>
+            <option>Technology Innovation Office</option>
+            <option>Technology Transfer</option>
+            <option>Tennessee Valley Authority</option>
+            <option>The African Development Foundation</option>
+            <option>The Corporation for National and Community Service</option>
+            <option>The Council of Economic Advisers</option>
+            <option>The Grain Inspection, Packers and Stockyards Administration</option>
+            <option>Toxic Substances and Disease Registry Agency</option>
+            <option>Transportation Department</option>
+            <option>Transportation Security Administration</option>
+            <option>Treasury Department</option>
+            <option>U.S. Arctic Research Commission</option>
+            <option>U.S. Army Air Mobility Research and Development Command</option>
+            <option>U.S. Circuit Courts of Appeals</option>
+            <option>U.S. Climate Change Science Program</option>
+            <option>U.S. Commission for the Preservation of America's Heritage Abroad</option>
+            <option>U.S. Commission on International Religious Freedom</option>
+            <option>U.S. Court of Appeals for the Federal Circuit</option>
+            <option>U.S. Court of Federal Claims</option>
+            <option>U.S. Fire Administration (USFA)</option>
+            <option>U.S. Trade and Development Agency</option>
+            <option>United States Advisory Commission on Public Diplomacy</option>
+            <option>United States Bankruptcy Court</option>
+            <option>United States Chemical Safety and Hazard Investigation Board</option>
+            <option>United States Court of International Trade</option>
+            <option>United States Court of Veterans Appeals</option>
+            <option>United States District Court</option>
+            <option>United States Employment Service</option>
+            <option>United States Holocaust Memorial Council</option>
+            <option>United States Institute of Peace</option>
+            <option>United States Parole Commission</option>
+            <option>United States Postal Service</option>
+            <option>United States Secret Service</option>
+            <option>United States Sentencing Commission</option>
+            <option>United States Trade Representative</option>
+            <option>United States-China Security Review Commission</option>
+            <option>Upper Midwest Environmental Sciences Center</option>
+            <option>US Agency for International Development</option>
+            <option>Veteran's Employment and Training Service</option>
+            <option>Veterans Affairs Department</option>
+            <option>Vice President of the United States</option>
+            <option>Violence Against Women Office</option>
+            <option>Wage and Hour Division</option>
+            <option>Water Office</option>
+            <option>Western Area Power Administration</option>
+            <option>Wetlands, Oceans &amp; Watersheds Office</option>
+            <option>White House Historical Association</option>
+            <option>Women's Bureau</option>
+            <option>Worker's Compensation Programs Office</option>
+            <option>Workforce Security Office</option>
           </select>
         </div>
         <!-- Name -->
-        <div class="form-group">
+        <div class="form-group quick-col">
           <label for="name">
             Your Name
           </label>
           <input required type="text" class="form-control" id="name" name="name"/>
         </div>
         <!-- Email -->
-        <div class="form-group">
+        <div class="form-group quick-col">
           <label for="email">
             Email address
           </label>
           <input required type="email" class="form-control" id="email" name="email"/>
         </div>
         <!-- Event Name -->
-        <div class="form-group">
+        <div class="form-group clear">
           <label for="eventName">
             Event Name
           </label>
@@ -601,22 +603,43 @@ html, body {min-height: 600px;}
           <input required type="number" min="0" max="99" class="form-control" id="organizationID" name="organizationID"/>
           <input type="number" min="0" max="99" class="form-control" id="suborgID" name="suborgID"/>
         </div>
-        <!-- Sub-Primer Num -->
-        <!-- NOTE: This is the only field that is NOT required to submit the form. -->
+       <div class="container">
         <div class="quick-col form-group">
-          <label for="subprimerID">
-            Sub-Primer Num
+          <label for="ftpID">
+            FTP
           </label>
           <br>
-          <input type="number" class="form-control" id="subprimerID" name="subprimerID"/>
+          <input type="checkbox" class="checkbox" id="ftpID" name="ftpID" value="Yes"/>
         </div>
         <div class="quick-col form-group">
-          <label for="crawlableID">
-            Uncrawlable content?
+          <label for="difficultyID">
+            Many Files
           </label>
           <br>
-          <input type="checkbox" class="form-control" id="crawlableID" name="crawlableID" value="Yes"/>
+          <input type="checkbox" class="checkbox" id="difficultyID" name="difficultyID" value="Yes"/>
         </div>
+        <div class="quick-col form-group">
+          <label for="databaseID">
+            Database
+          </label>
+          <br>
+          <input type="checkbox" class="checkbox" id="databaseID" name="databaseID" value="Yes"/>
+        </div>
+        <div class="quick-col form-group">
+          <label for="visualizationID">
+            Visualization/Interactive
+          </label>
+          <br>
+          <input type="checkbox" class="checkbox" id="visualizationID" name="visualizationID" value="Yes"/>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="commentID">
+            Comment
+          </label>
+          <input required type="text" class="form-control" id="commentID" name="commentID"/>
+      </div>
+
         <div class="clear"></div>
         <h3 id="success"></h3>
         <h3 id="error"></h3>

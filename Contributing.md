@@ -1,5 +1,6 @@
 # Contributing
 
+
 In contrast to earlier instructions, _we no longer encourage collaborators to publish their own forks to the Google Chrome Store_. Instead, please just be sure to co-ordinate with EDGI before the event, so we know you will be pushing seeds to our spreadsheet, and to request read access to the results if you don't already have it.  On the other hand, we would still love to have your help improving this extesion!
 
 ## Installing from source
@@ -29,14 +30,14 @@ If for some reason you desperately want to fork the tool, you can do so this way
 
 1. Create your own Google Form.  You can copy [ours](https://docs.google.com/forms/d/1kuwxu2lXYSRpkwBj4o9kwjURZL3hgk-mSFoK4qkC4ZI/edit), or create your own from scratch
     * Once you've created a form, Google will automagically create a spreadsheet in which to store the responses. You can also use the fancy response visualizations tool to get some basic information about submissions.
-  * Make note of the form URL. In `popup.js`, update the `GOOGLE_FORMS_URL` variable with the new URL, taking care to **replace the final `edit` with `/formResponse?ifq`**. 
-  
+  * Make note of the form URL. In `popup.js`, update the `GOOGLE_FORMS_URL` variable with the new URL, taking care to **replace the final `edit` with `/formResponse`**.
+
   The line you're looking for looks like this:
   ```js
-  var GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1kuwxu2lXYSRpkwBj4o9kwjURZL3hgk-mSFoK4qkC4ZI/formResponse?ifq';
+  const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1kuwxu2lXYSRpkwBj4o9kwjURZL3hgk-mSFoK4qkC4ZI/formResponse';
 ```
 
-2. For each field name, you will have to identify the corresponding field entry id and update the various field-relate variables. In your browser's developer tools pane, `inspect element` on the input field. You should see `entry.[integer]` in the highlighted code. That is the value for the entry field ID. 
+2. For each field name, you will have to identify the corresponding field entry id and update the various field-related variables. In your browser's developer tools pane, `inspect element` on the input field. You should see `entry.[integer]` in the highlighted code. That is the value for the entry field ID.
 
 3. The first time a user nominates a seed, they will choose a government agency subagency, organization, and possibly suborganization. Subsequent nominations will default to these same values. 
 

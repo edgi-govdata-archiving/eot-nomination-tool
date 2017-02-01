@@ -21,22 +21,27 @@ function nominationTool( e ) {
   e.preventDefault();
 
   // Google Forms constants
-  var GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1udxf9C7XeO7rm-SoucjDIv0c8XzGb7VVutsCI8r4s-Y/formResponse?ifq';
-  var NAME_FIELD = '&entry.1227505863=';
-  var EMAIL_FIELD = '&entry.1975141568=';
-  var EVENTNAME_FIELD = '&entry.1518336548=';
-  var URL_FIELD = '&entry.1767515686=';
-  var TITLE_FIELD = '&entry.180917746=';
+  const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1udxf9C7XeO7rm-SoucjDIv0c8XzGb7VVutsCI8r4s-Y/formResponse';
+  const NAME_FIELD = 'entry.1227505863';
+  const EMAIL_FIELD = 'entry.1975141568';
+  const EVENTNAME_FIELD = 'entry.1518336548';
+  const URL_FIELD = 'entry.1767515686';
+  const TITLE_FIELD = 'entry.180917746';
 
-  var NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
-  var AGENCY_FIELD = '&entry.1285343614=';
-  var AGENCY_ID = '&entry.536064408=';
-  var SUBAGENCY_ID = '&entry.1706245913=';
-  var ORGANIZATION_ID = '&entry.1076101938=';
-  var SUBORG_ID = '&entry.1768657731=';
-  var SUBPRIMER_ID = '&entry.615621344=';
-  var CRAWLABLE_ID = "&entry.2059306163=";
-  
+  const NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
+  const AGENCY_FIELD = 'entry.1285343614';
+  const AGENCY_ID = 'entry.536064408';
+  const SUBAGENCY_ID = 'entry.1706245913';
+  const ORGANIZATION_ID = 'entry.1076101938';
+  const SUBORG_ID = 'entry.1768657731';
+  const SUBPRIMER_ID = 'entry.615621344';
+  const FTP_ID = 'entry.365628902';
+  const VISUALIZATION_ID = 'entry.2057247667';
+  const DIFFICULTY_ID = 'entry.1702958174';
+  const DATABASE_ID = 'entry.15716096';
+  const COMMMENT_ID = 'entry.2034225983';
+  //const CRAWLABLE_ID = 'entry.2059306163';
+
   var title = $( '#title' ).val();
   var name = $( '#name' ).val();
   var email = $( '#email' ).val();
@@ -44,14 +49,18 @@ function nominationTool( e ) {
   // var eventName = "Guerilla Archiving Toronto Dec. 17"
   var eventName = $( '#eventName' ).val();
   var currentURL = $( '#url' ).val();
-  var agency = $( '#agency option:selected' ).text();
+  var agency = $( '#agency' ).val();
   var agencyID = $( '#agencyID' ).val();
   var subAgencyID = $( '#subAgencyID' ).val();
   var organizationID = $( '#organizationID' ).val();
   var suborgID = $( '#suborgID' ).val();
   var subprimerID = $( '#subprimerID' ).val();
-  var crawlableID = $( '#crawlableID').val();
-  
+  var ftpID = $( '#ftpID:checked' ).val();
+  var visualizationID = $( '#visualizationID:checked').val();
+  var difficultyID = $( '#difficultyID:checked').val();
+  var databaesID = $( '#databaseID:checked').val();
+  var commentID = $ ( '#commentID').val();
+
   if ( localStorage.name !== name ) {
     localStorage.name = name;
   }
@@ -64,7 +73,7 @@ function nominationTool( e ) {
   if ( localStorage.agency !== agency ) {
     localStorage.agency = agency;
   }
-  
+
   if ( localStorage.agencyID !== agencyID ) {
     localStorage.agencyID = agencyID;
   }
@@ -82,17 +91,30 @@ function nominationTool( e ) {
     localStorage.subprimerID = subprimerID;
   }
 
-  // set value of crawlable fields -- yes or no?
-  var crawlableText = "";
-  if(document.getElementById('crawlableID').checked) {
-    crawlableText = CRAWLABLE_ID + crawlableID
-  }
-  
+  const data = { ifq: '' };
+
+  data[NAME_FIELD] = localStorage.name;
+  data[EMAIL_FIELD] = localStorage.email;
+  data[TITLE_FIELD] = title;
+  data[EVENTNAME_FIELD] = localStorage.eventName;
+  data[URL_FIELD] = currentURL;
+  data[AGENCY_FIELD] = agency;
+  data[AGENCY_ID] = agencyID;
+  data[SUBAGENCY_ID] = subAgencyID;
+  data[ORGANIZATION_ID] = organizationID;
+  data[SUBORG_ID] = suborgID;
+  data[SUBPRIMER_ID] = subprimerID;
+  //data[CRAWLABLE_ID] = crawlableID;
+  data[FTP_ID] = ftpID;
+  data[VISUALIZATION_ID] = visualizationID;
+  data[DIFFICULTY_ID] = difficultyID;
+  data[DATABASE_ID] = difficultyID;
+  data[COMMMENT_ID] = commentID;
+
   // Do GET call to post to Google Form and open new tab
   $.get( {
-    url: GOOGLE_FORMS_URL + NAME_FIELD + localStorage.name + EMAIL_FIELD + localStorage.email + TITLE_FIELD + title + EVENTNAME_FIELD +
-      localStorage.eventName + URL_FIELD + currentURL + AGENCY_FIELD + agency + AGENCY_ID + agencyID + SUBAGENCY_ID + subAgencyID +
-      ORGANIZATION_ID + organizationID + SUBORG_ID + suborgID + SUBPRIMER_ID + subprimerID + crawlableText +'&submit=Submit',
+    url: GOOGLE_FORMS_URL,
+    data,
     success: function( res ) {
       $( '#success' ).html( "Success!" );
       setTimeout( function() {

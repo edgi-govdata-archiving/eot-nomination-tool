@@ -1,3 +1,4 @@
+[![Chrome Web Store](https://img.shields.io/badge/chrome--web--store-v%200.0.3.2-blue.svg)](https://chrome.google.com/webstore/detail/nominationtool/abjpihafglmijnkkoppbookfkkanklok)
 # 2016 Presidental Harvest - Nomination Tool
 
 (Developers please see [Contributing and Forking This Tool](./Contributing.md))
