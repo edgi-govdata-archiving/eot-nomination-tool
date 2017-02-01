@@ -10,6 +10,7 @@ div.half {max-width: 50%; float:left;}
 input.checkbox {width:100%; margin-left:auto; margin-right:auto;}
 .form-group {margin-bottom: 10px;}
 .agency-code input, #subprimerID { width: 70px; display: inline-block; }
+.go-right {float:right;}
 html, body {min-height: 600px;}
 </style>
 <div id="nominationTool">
@@ -597,11 +598,15 @@ html, body {min-height: 600px;}
           <label for="agency-code">
             Agency Office Code
           </label>
+          <label class="go-right" for="subprimerID">
+            Sub-Primer Num
+          </label>
           <br>
           <input required type="number" min="0" max="99" class="form-control" id="agencyID" name="agencyID"/>
           <input required type="number" min="0" max="99" class="form-control" id="subAgencyID" name="subAgencyID"/>
           <input required type="number" min="0" max="99" class="form-control" id="organizationID" name="organizationID"/>
           <input type="number" min="0" max="99" class="form-control" id="suborgID" name="suborgID"/>
+          <input type="number" class="form-control go-right" id="subprimerID" name="subprimerID"/>
         </div>
        <div class="container">
         <div class="quick-col form-group">
@@ -637,7 +642,7 @@ html, body {min-height: 600px;}
           <label for="commentID">
             Comment
           </label>
-          <input required type="text" class="form-control" id="commentID" name="commentID"/>
+          <input type="text" class="form-control" id="commentID" name="commentID"/>
       </div>
 
         <div class="clear"></div>
