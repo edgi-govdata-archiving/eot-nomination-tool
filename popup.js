@@ -58,7 +58,7 @@ function nominationTool( e ) {
   var ftpID = $( '#ftpID:checked' ).val();
   var visualizationID = $( '#visualizationID:checked').val();
   var difficultyID = $( '#difficultyID:checked').val();
-  var databaesID = $( '#databaseID:checked').val();
+  var databaseID = $( '#databaseID:checked').val();
   var commentID = $ ( '#commentID').val();
 
   if ( localStorage.name !== name ) {
@@ -108,7 +108,7 @@ function nominationTool( e ) {
   data[FTP_ID] = ftpID;
   data[VISUALIZATION_ID] = visualizationID;
   data[DIFFICULTY_ID] = difficultyID;
-  data[DATABASE_ID] = difficultyID;
+  data[DATABASE_ID] = databaseID;
   data[COMMMENT_ID] = commentID;
 
   // Do GET call to post to Google Form and open new tab
