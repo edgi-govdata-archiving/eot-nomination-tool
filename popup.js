@@ -258,7 +258,7 @@ $(() => {
           const match = matches[0];
           const now = new Date();
           const staleDays = 30;
-          const staleDuration = staleDays * 24 * 60 * 60 * 1000; // 30 days (in milliseconds)
+          const staleDuration = staleDays * 24 * 60 * 60 * 1000; // days in milliseconds
 
           if (now - match.timestamp < staleDuration) {
             showStatus('warning', `This URL has already been archived in the last ${staleDays} days`);
