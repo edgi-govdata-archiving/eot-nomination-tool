@@ -1,6 +1,6 @@
 /* List of Agency Office Codes and their corresponding Department names
 */
-window.AGENCY_IDS = {
+const AGENCY_IDS = {
   "1": "Environmental Protection Agency",
   "2": "Energy Department",
   "3": "National Oceanic and Atmospheric Administration",
@@ -39,9 +39,75 @@ function hideStatus() {
   $('#status').hide();
 }
 
+function checkUrl() {
+  const options = {
+    url: $('#url').val(),
+    limit: -1,
+    output: 'json',
+    fl: 'timestamp'
+  };
+
+  $.getJSON('http://web.archive.org/cdx/search/cdx', options)
+    .then((response) => {
+      if (response.length) {
+        const headers = response[0];
+        const rows = response.slice(1);
+
+        return rows.map((row) => {
+          const match = {};
+
+          headers.forEach((header, idx) => {
+            const value = row[idx];
+
+            switch (header) {
+            case 'timestamp':
+              const tokens = /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/.exec(value);
+
+              if (tokens) {
+                match[header] = new Date(
+                  parseInt(tokens[1], 10), // year
+                  parseInt(tokens[2], 10) - 1, // month
+                  parseInt(tokens[3], 10), // day
+                  parseInt(tokens[4], 10), // hours
+                  parseInt(tokens[5], 10), // minutes
+                  parseInt(tokens[6], 10) // seconds
+                );
+              } else {
+                console.error('Invalid timestamp value', value);
+              }
+              break;
+            default:
+              match[header] = value;
+            }
+          });
+
+          return match;
+        });
+      } else {
+        return response;
+      }
+    })
+    .then((matches) => {
+      if (matches.length) {
+        const match = matches[0];
+        const now = new Date();
+        const staleDays = 30;
+        const staleDuration = staleDays * 24 * 60 * 60 * 1000; // days in milliseconds
+
+        if (now - match.timestamp < staleDuration) {
+          showStatus('warning', `This URL has already been archived in the last ${staleDays} days`);
+        }
+      }
+    })
+    .catch((error) => {
+      console.error('Error looking up URL in CDX', error);
+    });
+}
+
 function onPageDetailsReceived( pageDetails ) {
-  pageTitle = document.getElementById( 'title' ).value = pageDetails.title;
-  currentURL = document.getElementById( 'url' ).value = pageDetails.url;
+  $('#title').val(pageDetails.title);
+  $('#url').val(pageDetails.url);
+  checkUrl();
 }
 
 // POST the data to the server using XMLHttpRequest
@@ -199,76 +265,12 @@ $(() => {
   */
   $( '#agencyID' ).change( function( event ) {
     var enteredCode = $( event.currentTarget ).val();
-    var agencyName = window.AGENCY_IDS[ enteredCode ];
+    var agencyName = AGENCY_IDS[ enteredCode ];
     $( "#agency" ).val( agencyName );
     $( "#agency" ).attr( 'disabled', 'disabled' );
   } );
 
-  $('#url').on('keyup paste change', debounce(function (event) {
-    const url = $(this).val();
-    const options = {
-      url,
-      limit: -1,
-      output: 'json',
-      fl: 'timestamp'
-    };
-
-    $.getJSON('http://web.archive.org/cdx/search/cdx', options)
-      .then((response) => {
-        if (response.length) {
-          const headers = response[0];
-          const rows = response.slice(1);
-
-          return rows.map((row) => {
-            const match = {};
-
-            headers.forEach((header, idx) => {
-              const value = row[idx];
-
-              switch (header) {
-              case 'timestamp':
-                const tokens = /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/.exec(value);
-
-                if (tokens) {
-                  match[header] = new Date(
-                    parseInt(tokens[1], 10), // year
-                    parseInt(tokens[2], 10) - 1, // month
-                    parseInt(tokens[3], 10), // day
-                    parseInt(tokens[4], 10), // hours
-                    parseInt(tokens[5], 10), // minutes
-                    parseInt(tokens[6], 10) // seconds
-                  );
-                } else {
-                  console.error('Invalid timestamp value', value);
-                }
-                break;
-              default:
-                match[header] = value;
-              }
-            });
-
-            return match;
-          });
-        } else {
-          return response;
-        }
-      })
-      .then((matches) => {
-        if (matches.length) {
-          const match = matches[0];
-          const now = new Date();
-          const staleDays = 30;
-          const staleDuration = staleDays * 24 * 60 * 60 * 1000; // days in milliseconds
-
-          if (now - match.timestamp < staleDuration) {
-            showStatus('warning', `This URL has already been archived in the last ${staleDays} days`);
-          }
-        }
-      })
-      .catch((error) => {
-        console.error('Error looking up URL in CDX', error);
-      });
-  }, 500));
+  $('#url').on('keyup paste change', debounce(checkUrl, 500));
 
   // Focus first field for a11y
   $('#title').focus();
