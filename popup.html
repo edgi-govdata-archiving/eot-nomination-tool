@@ -2,8 +2,6 @@
 <link rel="stylesheet" href="src/lib/bootstrap-3.3.7.min.css">
 <style type="text/css">
 #nominationTool { width: 500px; padding: 5px;}
-#success { color: green; }
-#error { color: red; }
 div.quick-col {max-width: 48%; padding-right:2%; float:left;}
 div.clear{clear:both;}
 div.half {max-width: 50%; float:left;}
@@ -582,7 +580,7 @@ html, body {min-height: 600px;}
         <!-- Email -->
         <div class="form-group quick-col">
           <label for="email">
-            Email address
+            Email Address
           </label>
           <input required type="email" class="form-control" id="email" name="email"/>
         </div>
@@ -646,11 +644,12 @@ html, body {min-height: 600px;}
       </div>
 
         <div class="clear"></div>
-        <h3 id="success"></h3>
-        <h3 id="error"></h3>
-        <button type="submit" id="save" class="btn btn-default" value="Save Bookmark">
-        Submit
-        </button>
+        <p>
+          <button type="submit" id="save" class="btn btn-default">
+            Submit
+          </button>
+        </p>
+        <p class="alert hidden" id="status"></p>
       </form>
     </div>
   </div>

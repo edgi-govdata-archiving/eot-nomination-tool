@@ -11,14 +11,46 @@ window.AGENCY_IDS = {
   "8": "Interior Department"
 };
 
+function debounce(fn, duration) {
+  let timeout = null;
+
+  return function () {
+    const args = arguments;
+
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    timeout = setTimeout(() => {
+      timeout = null;
+      fn.apply(this, args);
+    }, duration);
+  };
+}
+
+function showStatus(type, text) {
+  $('#status')
+    .attr('class', 'alert alert-' + type)
+    .text(text)
+    .show();
+}
+
+function hideStatus() {
+  $('#status').hide();
+}
+
 function onPageDetailsReceived( pageDetails ) {
   pageTitle = document.getElementById( 'title' ).value = pageDetails.title;
   currentURL = document.getElementById( 'url' ).value = pageDetails.url;
 }
 
 // POST the data to the server using XMLHttpRequest
-function nominationTool( e ) {
+function handleSubmit( e ) {
   e.preventDefault();
+
+  showStatus('info', 'Submitting');
+
+  $('#save').prop('disabled', true);
 
   // Google Forms constants
   const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1udxf9C7XeO7rm-SoucjDIv0c8XzGb7VVutsCI8r4s-Y/formResponse';
@@ -111,28 +143,28 @@ function nominationTool( e ) {
   data[DATABASE_ID] = databaseID;
   data[COMMMENT_ID] = commentID;
 
-  // Do GET call to post to Google Form and open new tab
-  $.get( {
-    url: GOOGLE_FORMS_URL,
-    data,
-    success: function( res ) {
-      $( '#success' ).html( "Success!" );
+  $.get(GOOGLE_FORMS_URL, data)
+    .then(() => {
+      $('#save').prop('disabled', false);
+
+      showStatus('success', 'URL submitted. Thanks!');
+      // @todo Why are we reloading the popup here? To reset some fields?
       setTimeout( function() {
-          window.location.reload();
-        }, 1000 );
-        // uncomment this line to also add the URL through the official notificaiton tool.
-        // window.open(NOTIFICATION_TOOL_URL + currentURL);
-    },
-    error: function( err ) {
-      $( '#error' ).html( err.statusText || "Error!" );
-    }
-  } );
+        window.location.reload();
+      }, 1000 );
+      // uncomment this line to also add the URL through the official notificaiton tool.
+      // window.open(NOTIFICATION_TOOL_URL + currentURL);
+    })
+    .catch((error) => {
+      $('#save').prop('disabled', false);
+      showStatus('danger', `Could not submit URL (${ error.statusText || 'Generic error' })`);
+    });
 }
 
 /* When the popup loads: Autopopulate the name, event name and email if it has been submitted before,
 * i.e. if localStorage has these fields already saved.
 */
-window.addEventListener( 'load', function( evt ) {
+$(() => {
   if ( localStorage.name && localStorage.name !== "null" ) {
     $( '#name' ).val( localStorage.name );
   }
@@ -172,10 +204,77 @@ window.addEventListener( 'load', function( evt ) {
     $( "#agency" ).attr( 'disabled', 'disabled' );
   } );
 
-  // Cache a reference to the status display SPAN
-  statusDisplay = document.getElementById( 'status-display' );
-  // Handle the bookmark form submit event with our nominationTool function
-  document.getElementById( 'nominationTool' ).addEventListener( 'submit', nominationTool );
+  $('#url').on('keyup paste change', debounce(function (event) {
+    const url = $(this).val();
+    const options = {
+      url,
+      limit: -1,
+      output: 'json',
+      fl: 'timestamp'
+    };
+
+    $.getJSON('http://web.archive.org/cdx/search/cdx', options)
+      .then((response) => {
+        if (response.length) {
+          const headers = response[0];
+          const rows = response.slice(1);
+
+          return rows.map((row) => {
+            const match = {};
+
+            headers.forEach((header, idx) => {
+              const value = row[idx];
+
+              switch (header) {
+              case 'timestamp':
+                const tokens = /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/.exec(value);
+
+                if (tokens) {
+                  match[header] = new Date(
+                    parseInt(tokens[1], 10), // year
+                    parseInt(tokens[2], 10) - 1, // month
+                    parseInt(tokens[3], 10), // day
+                    parseInt(tokens[4], 10), // hours
+                    parseInt(tokens[5], 10), // minutes
+                    parseInt(tokens[6], 10) // seconds
+                  );
+                } else {
+                  console.error('Invalid timestamp value', value);
+                }
+                break;
+              default:
+                match[header] = value;
+              }
+            });
+
+            return match;
+          });
+        } else {
+          return response;
+        }
+      })
+      .then((matches) => {
+        if (matches.length) {
+          const match = matches[0];
+          const now = new Date();
+          const staleDays = 30;
+          const staleDuration = staleDays * 24 * 60 * 60 * 1000; // 30 days (in milliseconds)
+
+          if (now - match.timestamp < staleDuration) {
+            showStatus('warning', `This URL has already been archived in the last ${staleDays} days`);
+          }
+        }
+      })
+      .catch((error) => {
+        console.error('Error looking up URL in CDX', error);
+      });
+  }, 500));
+
+  // Focus first field for a11y
+  $('#title').focus();
+
+  $('#nomination-form').submit(handleSubmit);
+
   // Get the event page
   chrome.runtime.getBackgroundPage( function( eventPage ) {
     // Call the getPageInfo function in the event page, passing in
@@ -183,4 +282,4 @@ window.addEventListener( 'load', function( evt ) {
     // content.js into the current tab's HTML
     eventPage.getPageDetails( onPageDetailsReceived );
   } );
-} );
+});
