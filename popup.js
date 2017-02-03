@@ -28,15 +28,31 @@ function debounce(fn, duration) {
   };
 }
 
+let statusHideTimeout = null;
+
 function showStatus(type, text) {
+  if (statusHideTimeout) {
+    clearTimeout(statusHideTimeout);
+    statusHideTimeout = null;
+  }
+
   $('#status')
     .attr('class', 'alert alert-' + type)
     .text(text)
     .show();
 }
 
-function hideStatus() {
-  $('#status').hide();
+function hideStatus(delay) {
+  if (statusHideTimeout) {
+    clearTimeout(statusHideTimeout);
+    statusHideTimeout = null;
+  }
+
+  if (delay) {
+    statusHideTimeout = setTimeout(hideStatus, delay);
+  } else {
+    $('#status').hide();
+  }
 }
 
 function checkUrl() {
@@ -214,10 +230,7 @@ function handleSubmit( e ) {
       $('#save').prop('disabled', false);
 
       showStatus('success', 'URL submitted. Thanks!');
-      // @todo Why are we reloading the popup here? To reset some fields?
-      setTimeout( function() {
-        window.location.reload();
-      }, 1000 );
+      hideStatus(3000);
       // uncomment this line to also add the URL through the official notificaiton tool.
       // window.open(NOTIFICATION_TOOL_URL + currentURL);
     })
