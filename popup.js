@@ -56,6 +56,8 @@ function hideStatus(delay) {
 }
 
 function checkUrl() {
+  return; // @todo disable URL checking for now due to traffic concerns
+
   const options = {
     url: $('#url').val(),
     limit: -1,
