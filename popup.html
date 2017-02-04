@@ -2,8 +2,6 @@
 <link rel="stylesheet" href="src/lib/bootstrap-3.3.7.min.css">
 <style type="text/css">
 #nominationTool { width: 500px; padding: 5px;}
-#success { color: green; }
-#error { color: red; }
 div.quick-col {max-width: 48%; padding-right:2%; float:left;}
 div.clear{clear:both;}
 div.half {max-width: 50%; float:left;}
@@ -12,6 +10,15 @@ input.checkbox {width:100%; margin-left:auto; margin-right:auto;}
 .agency-code input, #subprimerID { width: 70px; display: inline-block; }
 .go-right {float:right;}
 html, body {min-height: 600px;}
+#footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#status {
+  margin: 0 0 0 20px;
+  flex-grow: 1;
+}
 </style>
 <div id="nominationTool">
   <div class="row">
@@ -22,18 +29,18 @@ html, body {min-height: 600px;}
           <label for="title">
             Title
           </label>
-          <input required type="text" class="form-control" id="title" name="title"/>
+          <input required type="text" class="form-control input-sm" id="title" name="title"/>
         </div>
         <!-- URL -->
         <div class="form-group">
           <label for="url">
             URL
           </label>
-          <input required type="text" class="form-control" id="url" name="url"/>
+          <input required type="text" class="form-control input-sm" id="url" name="url"/>
         </div>
         <!-- Agency -->
         <div class="form-group">
-          <select class="form-control" id="agency" name="agency" required>
+          <select class="form-control input-sm" id="agency" name="agency" required>
             <option>Adjutant General's Office (Army)</option>
             <option>Administration for Children and Families</option>
             <option>Administrative Office of U.S. Courts</option>
@@ -577,21 +584,21 @@ html, body {min-height: 600px;}
           <label for="name">
             Your Name
           </label>
-          <input required type="text" class="form-control" id="name" name="name"/>
+          <input required type="text" class="form-control input-sm" id="name" name="name"/>
         </div>
         <!-- Email -->
         <div class="form-group quick-col">
           <label for="email">
-            Email address
+            Email Address
           </label>
-          <input required type="email" class="form-control" id="email" name="email"/>
+          <input required type="email" class="form-control input-sm" id="email" name="email"/>
         </div>
         <!-- Event Name -->
         <div class="form-group clear">
           <label for="eventName">
             Event Name
           </label>
-          <input required type="text" class="form-control" id="eventName" name="eventName"/>
+          <input required type="text" class="form-control input-sm" id="eventName" name="eventName"/>
         </div>
         <!-- Agency Office Code -->
         <div class="form-group agency-code">
@@ -602,55 +609,54 @@ html, body {min-height: 600px;}
             Sub-Primer Num
           </label>
           <br>
-          <input required type="number" min="0" max="99" class="form-control" id="agencyID" name="agencyID"/>
-          <input required type="number" min="0" max="99" class="form-control" id="subAgencyID" name="subAgencyID"/>
-          <input required type="number" min="0" max="99" class="form-control" id="organizationID" name="organizationID"/>
-          <input type="number" min="0" max="99" class="form-control" id="suborgID" name="suborgID"/>
-          <input type="number" class="form-control go-right" id="subprimerID" name="subprimerID"/>
+          <input required type="number" min="0" max="99" class="form-control input-sm" id="agencyID" name="agencyID"/>
+          <input required type="number" min="0" max="99" class="form-control input-sm" id="subAgencyID" name="subAgencyID"/>
+          <input required type="number" min="0" max="99" class="form-control input-sm" id="organizationID" name="organizationID"/>
+          <input type="number" min="0" max="99" class="form-control input-sm" id="suborgID" name="suborgID"/>
+          <input type="number" class="form-control input-sm go-right" id="subprimerID" name="subprimerID"/>
         </div>
-       <div class="container">
-        <div class="quick-col form-group">
-          <label for="ftpID">
-            FTP
-          </label>
-          <br>
-          <input type="checkbox" class="checkbox" id="ftpID" name="ftpID" value="Yes"/>
+        <div class="container">
+          <div class="quick-col form-group">
+            <label for="ftpID">
+              FTP
+            </label>
+            <br>
+            <input type="checkbox" class="checkbox" id="ftpID" name="ftpID" value="Yes"/>
+          </div>
+          <div class="quick-col form-group">
+            <label for="difficultyID">
+              Many Files
+            </label>
+            <br>
+            <input type="checkbox" class="checkbox" id="difficultyID" name="difficultyID" value="Yes"/>
+          </div>
+          <div class="quick-col form-group">
+            <label for="databaseID">
+              Database
+            </label>
+            <br>
+            <input type="checkbox" class="checkbox" id="databaseID" name="databaseID" value="Yes"/>
+          </div>
+          <div class="quick-col form-group">
+            <label for="visualizationID">
+              Visualization/Interactive
+            </label>
+            <br>
+            <input type="checkbox" class="checkbox" id="visualizationID" name="visualizationID" value="Yes"/>
+          </div>
         </div>
-        <div class="quick-col form-group">
-          <label for="difficultyID">
-            Many Files
-          </label>
-          <br>
-          <input type="checkbox" class="checkbox" id="difficultyID" name="difficultyID" value="Yes"/>
-        </div>
-        <div class="quick-col form-group">
-          <label for="databaseID">
-            Database
-          </label>
-          <br>
-          <input type="checkbox" class="checkbox" id="databaseID" name="databaseID" value="Yes"/>
-        </div>
-        <div class="quick-col form-group">
-          <label for="visualizationID">
-            Visualization/Interactive
-          </label>
-          <br>
-          <input type="checkbox" class="checkbox" id="visualizationID" name="visualizationID" value="Yes"/>
-        </div>
-      </div>
-      <div class="form-group">
+        <div class="form-group">
           <label for="commentID">
             Comment
           </label>
-          <input type="text" class="form-control" id="commentID" name="commentID"/>
-      </div>
-
-        <div class="clear"></div>
-        <h3 id="success"></h3>
-        <h3 id="error"></h3>
-        <button type="submit" id="save" class="btn btn-default" value="Save Bookmark">
-        Submit
-        </button>
+          <textarea rows="2" class="form-control input-sm" id="commentID" name="commentID"></textarea>
+        </div>
+        <div id="footer">
+          <button type="submit" id="save" class="btn btn-default">
+            Submit
+          </button>
+          <div class="alert hidden" id="status"></div>
+        </div>
       </form>
     </div>
   </div>
