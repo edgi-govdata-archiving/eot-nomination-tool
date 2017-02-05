@@ -109,7 +109,7 @@ main {
   white-space: nowrap;
   position: relative;
 }
-.form-field.required label:before {
+.form-field.-required label:before {
   content: '';
   position: absolute;
   left: -.5rem;
@@ -121,10 +121,10 @@ main {
   height: .3rem;
   border-radius: .15rem;
 }
-.form-field input, .form-field .select-wrapper, .form-field textarea, .form-field .filler, .form-field fieldset {
+.form-field input, .form-field ._select-wrapper, .form-field textarea, .form-field ._filler, .form-field fieldset {
   flex: 1;
 }
-.form-field .filler {
+.form-field ._filler {
   padding: .25em;
 }
 .form-field fieldset {
@@ -132,11 +132,11 @@ main {
   border: none;
   padding: 0;
 }
-.form-field.multi input, .form-field.multi .filler {
+.form-field.multi input, .form-field.multi ._filler {
   width: 0;
   margin-right: .5rem;
 }
-.form-field.multi input:last-child, .form-field.multi .filler:last-child {
+.form-field.multi input:last-child, .form-field.multi ._filler:last-child {
   margin-right: 0;
 }
 .form-field input, .form-field select, .form-field textarea {
@@ -151,11 +151,11 @@ main {
   outline: none;
   border-color: #4af;
 }
-.select-wrapper {
+._select-wrapper {
   display: flex;
   position: relative;
 }
-.select-wrapper:before, .select-wrapper:after {
+._select-wrapper:before, ._select-wrapper:after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -167,19 +167,19 @@ main {
   border: 6px solid transparent;
   pointer-events: none;
 }
-.select-wrapper:before {
+._select-wrapper:before {
   margin-top: -3px;
   border-top-color: #333;
   opacity: .75;
 }
-.select-wrapper:after {
+._select-wrapper:after {
   margin-top: -5px;
   border-top-color: #fff;
 }
-.select-wrapper:hover:before {
+._select-wrapper:hover:before {
   opacity: 1;
 }
-.select-wrapper select {
+._select-wrapper select {
   width: 0;
   flex: 1;
   -webkit-appearance: none;
@@ -188,25 +188,25 @@ main {
   padding-right: 1.75rem;
   background: #fff;
 }
-.select-wrapper select:enabled {
+._select-wrapper select:enabled {
   cursor: pointer;
 }
-.select-wrapper select:disabled {
+._select-wrapper select:disabled {
   color: #aaa;
 }
-.checkbox-wrapper {
+._checkbox-wrapper {
   position: relative;
 }
-.checkbox-wrapper input {
+._checkbox-wrapper input {
   position: absolute;
   left: -9999px;
 }
-.checkbox-wrapper label {
+._checkbox-wrapper label {
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-.checkbox-wrapper label:before {
+._checkbox-wrapper label:before {
   content: '';
   background: #fff;
   transition: background-color 125ms;
@@ -218,7 +218,7 @@ main {
   border-radius: .5rem;
   margin-right: .25rem;
 }
-.checkbox-wrapper label:after {
+._checkbox-wrapper label:after {
   content: '';
   width: 1rem;
   height: 1rem;
@@ -234,18 +234,18 @@ main {
   transition: left 125ms, background-color 125ms, opacity 125ms;
   opacity: .75;
 }
-.checkbox-wrapper label:hover:after {
+._checkbox-wrapper label:hover:after {
   opacity: 1;
 }
-.checkbox-wrapper input:checked + label:before {
+._checkbox-wrapper input:checked + label:before {
   background-color: #6cf;
   border-color: #6cf;
 }
-.checkbox-wrapper input:checked + label:after {
+._checkbox-wrapper input:checked + label:after {
   left: 1rem;
   background-color: #008;
 }
-.checkbox-wrapper input:focus + label:before {
+._checkbox-wrapper input:focus + label:before {
   border-color: #4af;
 }
 .form-message {

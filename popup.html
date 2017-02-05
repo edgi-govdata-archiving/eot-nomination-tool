@@ -10,18 +10,18 @@
     <header><h1>EOT Nomination Tool</h1></header>
     <main>
       <form id="form" action="#">
-        <div class="form-field required">
+        <div class="form-field -required">
           <label for="title">Title</label>
           <input id="title" required>
         </div>
-        <div class="form-field required">
+        <div class="form-field -required">
           <label for="url">URL</label>
           <input id="url" required>
         </div>
         <div class="form-message" id="url-warning">This URL has already been archived in the last 30 days</div>
         <div class="form-field">
           <label for="agency">Agency</label>
-          <div class="select-wrapper">
+          <div class="_select-wrapper">
             <select id="agency">
               <option>Adjutant General's Office (Army)</option>
               <option>Administration for Children and Families</option>
@@ -562,19 +562,19 @@
             </select>
           </div>
         </div>
-        <div class="form-field required">
+        <div class="form-field -required">
           <label for="name">Your Name</label>
           <input id="name" required>
         </div>
-        <div class="form-field required">
+        <div class="form-field -required">
           <label for="email">Your Email</label>
           <input id="email" type="email" required>
         </div>
-        <div class="form-field required">
+        <div class="form-field -required">
           <label for="eventName">Event Name</label>
           <input id="eventName" required>
         </div>
-        <div class="form-field multi required">
+        <div class="form-field multi -required">
           <label for="agencyID">Agency Office</label>
           <input id="agencyID" type="number" min="0" max="99" required>
           <input id="subAgencyID" type="number" min="0" max="99" required>
@@ -584,25 +584,25 @@
         <div class="form-field multi">
           <label for="subprimerID">Subprimer</label>
           <input id="subprimerID" type="number">
-          <span class="filler"></span>
-          <span class="filler"></span>
-          <span class="filler"></span>
+          <span class="_filler"></span>
+          <span class="_filler"></span>
+          <span class="_filler"></span>
         </div>
         <div class="form-field">
           <label>Nature</label>
           <fieldset>
-            <div class="checkbox-wrapper">
+            <div class="_checkbox-wrapper">
               <input type="checkbox" id="ftpID"> <label for="ftpID">FTP</label>
             </div>
-            <div class="checkbox-wrapper">
+            <div class="_checkbox-wrapper">
               <input type="checkbox" id="difficultyID"> <label for="difficultyID">Many Files</label>
             </div>
           </fieldset>
           <fieldset>
-            <div class="checkbox-wrapper">
+            <div class="_checkbox-wrapper">
               <input type="checkbox" id="databaseID"> <label for="databaseID">Database</label>
             </div>
-            <div class="checkbox-wrapper">
+            <div class="_checkbox-wrapper">
               <input type="checkbox" id="visualizationID"> <label for="visualizationID">Visualization/Interactive</label>
             </div>
           </fieldset>
