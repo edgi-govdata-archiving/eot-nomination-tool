@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
 body {
-  font-family: 'Varela Round', sans-serif;
-  font-size: 100%;
-  background: #fff;
-  color: #333;
-  width: 550px;
   margin: 0;
   padding: 0;
 }
@@ -76,6 +71,13 @@ body {
   top: 50%;
   margin-top: -.25rem;
 }
+.popup {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 100%;
+  background: #fff;
+  color: #333;
+  width: 550px;
+}
 header {
   padding: .5rem;
   position: relative;
@@ -87,7 +89,6 @@ header h1 {
   font-weight: normal;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-family: 'Varela Round', sans-serif;
 }
 main {
   background: #eee;
