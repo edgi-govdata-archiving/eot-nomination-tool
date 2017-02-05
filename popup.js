@@ -180,10 +180,10 @@ function handleSubmit( e ) {
   var organizationID = $( '#organizationID' ).val();
   var suborgID = $( '#suborgID' ).val();
   var subprimerID = $( '#subprimerID' ).val();
-  var ftpID = $( '#ftpID:checked' ).val();
-  var visualizationID = $( '#visualizationID:checked').val();
-  var difficultyID = $( '#difficultyID:checked').val();
-  var databaseID = $( '#databaseID:checked').val();
+  var ftpID = !!$( '#ftpID:checked' ).val();
+  var visualizationID = !!$( '#visualizationID:checked').val();
+  var difficultyID = !!$( '#difficultyID:checked').val();
+  var databaseID = !!$( '#databaseID:checked').val();
   var commentID = $ ( '#commentID').val();
 
   if ( localStorage.name !== name ) {
@@ -230,10 +230,10 @@ function handleSubmit( e ) {
   data[SUBORG_ID] = suborgID;
   data[SUBPRIMER_ID] = subprimerID;
   //data[CRAWLABLE_ID] = crawlableID;
-  data[FTP_ID] = ftpID;
-  data[VISUALIZATION_ID] = visualizationID;
-  data[DIFFICULTY_ID] = difficultyID;
-  data[DATABASE_ID] = databaseID;
+  data[FTP_ID] = ftpID ? 'Yes' : '';
+  data[VISUALIZATION_ID] = visualizationID ? 'Yes' : '';
+  data[DIFFICULTY_ID] = difficultyID ? 'Yes' : '';
+  data[DATABASE_ID] = databaseID ? 'Yes' : '';
   data[COMMMENT_ID] = commentID;
 
   $.get(GOOGLE_FORMS_URL, data)
