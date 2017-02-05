@@ -37,7 +37,7 @@ function showStatus(type, text) {
   }
 
   $('#status')
-    .attr('class', 'alert alert-' + type)
+    .attr('class', 'status -' + type)
     .text(text)
     .show();
 }
@@ -53,6 +53,14 @@ function hideStatus(delay) {
   } else {
     $('#status').hide();
   }
+}
+
+function showUrlWarning(text) {
+  $('#url-warning').text(text).show();
+}
+
+function hideUrlWarning() {
+  $('#url-warning').hide();
 }
 
 function checkUrl() {
@@ -104,6 +112,8 @@ function checkUrl() {
       }
     })
     .then((matches) => {
+      hideUrlWarning();
+
       if (matches.length) {
         const match = matches[0];
         const now = new Date();
@@ -111,11 +121,12 @@ function checkUrl() {
         const staleDuration = staleDays * 24 * 60 * 60 * 1000; // days in milliseconds
 
         if (now - match.timestamp < staleDuration) {
-          showStatus('warning', `This URL has already been archived in the last ${staleDays} days`);
+          showUrlWarning(`This URL has already been archived in the last ${staleDays} days`);
         }
       }
     })
     .catch((error) => {
+      hideUrlWarning();
       console.error('Error looking up URL in CDX', error);
     });
 }
@@ -130,9 +141,9 @@ function onPageDetailsReceived( pageDetails ) {
 function handleSubmit( e ) {
   e.preventDefault();
 
-  showStatus('info', 'Submitting');
+  showStatus('pending', 'Submitting');
 
-  $('#save').prop('disabled', true);
+  $('#submit').prop('disabled', true);
 
   // Google Forms constants
   const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1udxf9C7XeO7rm-SoucjDIv0c8XzGb7VVutsCI8r4s-Y/formResponse';
@@ -169,10 +180,10 @@ function handleSubmit( e ) {
   var organizationID = $( '#organizationID' ).val();
   var suborgID = $( '#suborgID' ).val();
   var subprimerID = $( '#subprimerID' ).val();
-  var ftpID = $( '#ftpID:checked' ).val();
-  var visualizationID = $( '#visualizationID:checked').val();
-  var difficultyID = $( '#difficultyID:checked').val();
-  var databaseID = $( '#databaseID:checked').val();
+  var ftpID = !!$( '#ftpID:checked' ).val();
+  var visualizationID = !!$( '#visualizationID:checked').val();
+  var difficultyID = !!$( '#difficultyID:checked').val();
+  var databaseID = !!$( '#databaseID:checked').val();
   var commentID = $ ( '#commentID').val();
 
   if ( localStorage.name !== name ) {
@@ -219,15 +230,15 @@ function handleSubmit( e ) {
   data[SUBORG_ID] = suborgID;
   data[SUBPRIMER_ID] = subprimerID;
   //data[CRAWLABLE_ID] = crawlableID;
-  data[FTP_ID] = ftpID;
-  data[VISUALIZATION_ID] = visualizationID;
-  data[DIFFICULTY_ID] = difficultyID;
-  data[DATABASE_ID] = databaseID;
+  data[FTP_ID] = ftpID ? 'Yes' : '';
+  data[VISUALIZATION_ID] = visualizationID ? 'Yes' : '';
+  data[DIFFICULTY_ID] = difficultyID ? 'Yes' : '';
+  data[DATABASE_ID] = databaseID ? 'Yes' : '';
   data[COMMMENT_ID] = commentID;
 
   $.get(GOOGLE_FORMS_URL, data)
     .then(() => {
-      $('#save').prop('disabled', false);
+      $('#submit').prop('disabled', false);
 
       showStatus('success', 'URL submitted. Thanks!');
       hideStatus(3000);
@@ -235,8 +246,8 @@ function handleSubmit( e ) {
       // window.open(NOTIFICATION_TOOL_URL + currentURL);
     })
     .catch((error) => {
-      $('#save').prop('disabled', false);
-      showStatus('danger', `Could not submit URL (${ error.statusText || 'Generic error' })`);
+      $('#submit').prop('disabled', false);
+      showStatus('failure', `Could not submit URL (${ error.statusText || 'Generic error' })`);
     });
 }
 
@@ -279,8 +290,12 @@ $(() => {
   $( '#agencyID' ).change( function( event ) {
     var enteredCode = $( event.currentTarget ).val();
     var agencyName = AGENCY_IDS[ enteredCode ];
-    $( "#agency" ).val( agencyName );
-    $( "#agency" ).attr( 'disabled', 'disabled' );
+
+    if (agencyName) {
+      $( "#agency" ).val( agencyName ).prop('disabled', true);
+    } else {
+      $( "#agency" ).prop('disabled', false);
+    }
   } );
 
   $('#url').on('keyup paste change', debounce(checkUrl, 500));
@@ -288,7 +303,10 @@ $(() => {
   // Focus first field for a11y
   $('#title').focus();
 
-  $('#nomination-form').submit(handleSubmit);
+  hideUrlWarning();
+  hideStatus();
+
+  $('#form').submit(handleSubmit);
 
   // Get the event page
   chrome.runtime.getBackgroundPage( function( eventPage ) {

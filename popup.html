@@ -2,51 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="src/lib/bootstrap-3.3.7.min.css">
-    <style>
-      body { width: 500px; padding: 5px;}
-      div.quick-col {max-width: 48%; padding-right:2%; float:left;}
-      div.clear{clear:both;}
-      div.half {max-width: 50%; float:left;}
-      input.checkbox {width:100%; margin-left:auto; margin-right:auto;}
-      .form-group {margin-bottom: 10px;}
-      .agency-code input, #subprimerID { width: 70px; display: inline-block; }
-      .go-right {float:right;}
-      html, body {min-height: 600px;}
-      #footer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-      #status {
-        margin: 0 0 0 20px;
-        flex-grow: 1;
-      }
-    </style>
+    <link rel="stylesheet" href="popup.css">
     <script src="src/lib/jquery-3.1.1.min.js"></script>
     <script src="popup.js"></script>
   </head>
   <body>
-    <div class="row">
-      <div class="col-md-12">
-        <form role="form" id="nomination-form">
-          <!-- Title -->
-          <div class="form-group">
-            <label for="title">
-              Title
-            </label>
-            <input required type="text" class="form-control input-sm" id="title" name="title"/>
-          </div>
-          <!-- URL -->
-          <div class="form-group">
-            <label for="url">
-              URL
-            </label>
-            <input required type="text" class="form-control input-sm" id="url" name="url"/>
-          </div>
-          <!-- Agency -->
-          <div class="form-group">
-            <select class="form-control input-sm" id="agency" name="agency" required>
+    <header><h1>EOT Nomination Tool</h1></header>
+    <main>
+      <form id="form" action="#">
+        <div class="form-field -required">
+          <label for="title">Title</label>
+          <input id="title" required>
+        </div>
+        <div class="form-field -required">
+          <label for="url">URL</label>
+          <input id="url" required>
+        </div>
+        <div class="form-message" id="url-warning">This URL has already been archived in the last 30 days</div>
+        <div class="form-field">
+          <label for="agency">Agency</label>
+          <div class="_select-wrapper">
+            <select id="agency">
               <option>Adjutant General's Office (Army)</option>
               <option>Administration for Children and Families</option>
               <option>Administrative Office of U.S. Courts</option>
@@ -585,86 +561,64 @@
               <option>Workforce Security Office</option>
             </select>
           </div>
-          <!-- Name -->
-          <div class="form-group quick-col">
-            <label for="name">
-              Your Name
-            </label>
-            <input required type="text" class="form-control input-sm" id="name" name="name"/>
-          </div>
-          <!-- Email -->
-          <div class="form-group quick-col">
-            <label for="email">
-              Email Address
-            </label>
-            <input required type="email" class="form-control input-sm" id="email" name="email"/>
-          </div>
-          <!-- Event Name -->
-          <div class="form-group clear">
-            <label for="eventName">
-              Event Name
-            </label>
-            <input required type="text" class="form-control input-sm" id="eventName" name="eventName"/>
-          </div>
-          <!-- Agency Office Code -->
-          <div class="form-group agency-code">
-            <label for="agency-code">
-              Agency Office Code
-            </label>
-            <label class="go-right" for="subprimerID">
-              Sub-Primer Num
-            </label>
-            <br>
-            <input required type="number" min="0" max="99" class="form-control input-sm" id="agencyID" name="agencyID"/>
-            <input required type="number" min="0" max="99" class="form-control input-sm" id="subAgencyID" name="subAgencyID"/>
-            <input required type="number" min="0" max="99" class="form-control input-sm" id="organizationID" name="organizationID"/>
-            <input type="number" min="0" max="99" class="form-control input-sm" id="suborgID" name="suborgID"/>
-            <input type="number" class="form-control input-sm go-right" id="subprimerID" name="subprimerID"/>
-          </div>
-          <div class="container">
-            <div class="quick-col form-group">
-              <label for="ftpID">
-                FTP
-              </label>
-              <br>
-              <input type="checkbox" class="checkbox" id="ftpID" name="ftpID" value="Yes"/>
+        </div>
+        <div class="form-field -required">
+          <label for="name">Your Name</label>
+          <input id="name" required>
+        </div>
+        <div class="form-field -required">
+          <label for="email">Your Email</label>
+          <input id="email" type="email" required>
+        </div>
+        <div class="form-field -required">
+          <label for="eventName">Event Name</label>
+          <input id="eventName" required>
+        </div>
+        <div class="form-field multi -required">
+          <label for="agencyID">Agency Office</label>
+          <input id="agencyID" type="number" min="0" max="99" required>
+          <input id="subAgencyID" type="number" min="0" max="99" required>
+          <input id="organizationID" type="number" min="0" max="99" required>
+          <input id="suborgID" type="number" min="0" max="99">
+        </div>
+        <div class="form-field multi">
+          <label for="subprimerID">Subprimer</label>
+          <input id="subprimerID" type="number">
+          <span class="_filler"></span>
+          <span class="_filler"></span>
+          <span class="_filler"></span>
+        </div>
+        <div class="form-field">
+          <label>Nature</label>
+          <fieldset>
+            <div class="_checkbox-wrapper">
+              <input type="checkbox" id="ftpID"> <label for="ftpID">FTP</label>
             </div>
-            <div class="quick-col form-group">
-              <label for="difficultyID">
-                Many Files
-              </label>
-              <br>
-              <input type="checkbox" class="checkbox" id="difficultyID" name="difficultyID" value="Yes"/>
+            <div class="_checkbox-wrapper">
+              <input type="checkbox" id="difficultyID"> <label for="difficultyID">Many Files</label>
             </div>
-            <div class="quick-col form-group">
-              <label for="databaseID">
-                Database
-              </label>
-              <br>
-              <input type="checkbox" class="checkbox" id="databaseID" name="databaseID" value="Yes"/>
+          </fieldset>
+          <fieldset>
+            <div class="_checkbox-wrapper">
+              <input type="checkbox" id="databaseID"> <label for="databaseID">Database</label>
             </div>
-            <div class="quick-col form-group">
-              <label for="visualizationID">
-                Visualization/Interactive
-              </label>
-              <br>
-              <input type="checkbox" class="checkbox" id="visualizationID" name="visualizationID" value="Yes"/>
+            <div class="_checkbox-wrapper">
+              <input type="checkbox" id="visualizationID"> <label for="visualizationID">Visualization/Interactive</label>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="commentID">
-              Comment
-            </label>
-            <textarea rows="2" class="form-control input-sm" id="commentID" name="commentID"></textarea>
-          </div>
-          <div id="footer">
-            <button type="submit" id="save" class="btn btn-default">
-              Submit
-            </button>
-            <div class="alert hidden" id="status"></div>
-          </div>
-        </form>
-      </div>
-    </div>
+          </fieldset>
+        </div>
+        <div class="form-field">
+          <label for="commentID">Comments</label>
+          <textarea id="commentID" rows="3"></textarea>
+        </div>
+        <div class="form-footnote">
+          Required fields
+        </div>
+      </form>
+    </main>
+    <footer>
+      <button type="submit" form="form" id="submit">Submit</button>
+      <div id="status" class="status"></div>
+    </footer>
   </body>
 </html>
