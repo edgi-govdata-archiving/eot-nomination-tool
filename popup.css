@@ -102,6 +102,7 @@ body {
   background: #fff;
   color: #333;
   width: 550px;
+  user-select: none;
 }
 header {
   padding: .5rem;
