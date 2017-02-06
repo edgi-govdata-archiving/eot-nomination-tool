@@ -13,63 +13,88 @@ body {
   }
 }
 .status {
-  font-size: .75rem;
-  padding-left: 1rem;
-  color: #666;
   position: relative;
+  height: 1em;
+  line-height: 1em;
+  padding: .5em;
+  padding-left: 2em;
+  transition: color 250ms;
+}
+.status:before, .status:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  transition: all 250ms;
+}
+.status.-pending {
+  color: #666;
 }
 .status.-pending:before, .status.-pending:after {
-  content: '';
-  position: absolute;
-  width: .25rem;
-  height: .25rem;
+  background: #888;
   animation-name: spin;
   animation-duration: 1000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  background: #888;
 }
 .status.-pending:before {
-  left: 0;
-  top: 50%;
-  margin-top: -.25rem;
-  border-top-left-radius: .25rem;
-  transform-origin: bottom right;
+  width: .25em;
+  height: .25em;
+  top: .5em;
+  left: .875em;
+  border-radius: .125em;
+  transform-origin: 50% .5em;
 }
 .status.-pending:after {
-  left: .25rem;
-  top: 50%;
-  border-bottom-right-radius: .25rem;
-  transform-origin: top left;
+  width: .25em;
+  height: .25em;
+  top: 1.25em;
+  left: .875em;
+  border-radius: .125em;
+  transform-origin: 50% -.25em;
 }
 .status.-success {
-  color: #008;
+  color: #368;
+}
+.status.-success:before, .status.-success:after {
+  background: #6cf;
+  border-radius: .125em;
 }
 .status.-success:before {
-  content: '';
-  position: absolute;
-  width: .5rem;
-  height: .5rem;
-  left: 0;
-  top: 50%;
-  margin-top: -.25rem;
-  background: #6cf;
+  width: .25em;
+  height: 1em;
+  top: .5em;
+  left: .875em;
+  transform-origin: 50% .875em;
+  transform: translate(-.177em, -.11em) rotate(.125turn);
+}
+.status.-success:after {
+  width: .25em;
+  height: .5em;
+  top: 1em;
+  left: .875em;
+  transform-origin: 50% .375em;
+  transform: translate(-.177em, -.11em) rotate(-.125turn);
 }
 .status.-failure {
   color: #802;
 }
+.status.-failure:before, .status.-failure:after {
+  background: #f04;
+  border-radius: .125em;
+}
 .status.-failure:before {
-  content: '';
-  position: absolute;
-  width: 0;
-  border: .35rem solid transparent;
-  height: 0;
-  border-top-width: 0;
-  border-bottom-width: .5rem;
-  border-bottom-color: #f04;
-  left: 0;
-  top: 50%;
-  margin-top: -.25rem;
+  width: .25em;
+  height: 1em;
+  top: .5em;
+  left: .875em;
+  transform: rotate(.125turn);
+}
+.status.-failure:after {
+  width: .25em;
+  height: 1em;
+  top: .5em;
+  left: .875em;
+  transform: rotate(-.125turn);
 }
 .popup {
   font-family: 'Varela Round', sans-serif;
@@ -311,5 +336,6 @@ footer button:focus {
 }
 footer #status {
   position: absolute;
-  left: 1rem;
+  left: .75rem;
+  font-size: .75rem;
 }
