@@ -4,12 +4,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.status {
-  font-size: .75rem;
-  padding-left: 1rem;
-  color: #666;
-  position: relative;
-}
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -17,6 +11,12 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+.status {
+  font-size: .75rem;
+  padding-left: 1rem;
+  color: #666;
+  position: relative;
 }
 .status.-pending:before, .status.-pending:after {
   content: '';
