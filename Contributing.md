@@ -1,5 +1,6 @@
-# Contributing
+# Contributing Guidelines
 
+We love improvements to our tools! EDGI has general [guidelines for contributing](https://github.com/edgi-govdata-archiving/overview/blob/master/CONTRIBUTING.md) to all of our organizational repos. 
 
 In contrast to earlier instructions, _we no longer encourage collaborators to publish their own forks to the Google Chrome Store_. Instead, please just be sure to co-ordinate with EDGI before the event, so we know you will be pushing seeds to our spreadsheet, and to request read access to the results if you don't already have it.  On the other hand, we would still love to have your help improving this extesion!
 
