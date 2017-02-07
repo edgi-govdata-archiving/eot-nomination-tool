@@ -29,12 +29,18 @@ We have published a version of the chrome Extension [on the Chrome Store](https:
 
 5. Go to the URL that you wish to nominate
 
-6. click the extension icon near the address bar. A form will pop up beneath the icon. The title and URL will be autofilled with the current URL of the tab, and on subsequent uses your name/email/event information will also be pre-filled.
+6. Click the extension icon near the address bar (the icon looks like a black magnifying glass). A form will pop up beneath the icon. The title and URL will be autofilled with the current URL of the tab, and once you have submitted the form one time, your name/email/event information will also be pre-filled. 
 
 7. If you're working with an EDGI subprimer ([found here](https://envirodatagov.org/agency-forecasts/)), you should fill-in the corresponding Agency Office Code that relates to particular subprimers. Filling in the code will autocomplete the agency in the dropdown above.
 
-8. The Sub-primer Num should be filled in correspondingly to particular numbered link in the subprimer you're working with. If the page contains uncrawlable content, note that by clicking the checkbox. On dubsequent uses, these will also be pre-filled, though you can alter them at any time just by choosing something else.
+8. The Sub-primer Num should be filled in correspondingly to the particular numbered link in the subprimer you're working with. If the page contains uncrawlable content, note that by selecting one or a combination of the four checkboxes. On subsequent uses, these will also be pre-filled, though you can alter them at any time just by choosing something else.
 ![Here](docs/img/newExtensionUI_2.png)
+
+The four checkboxes to note uncrawlable content are as follows, with an example of each linked: 
+  1) [FTP](ftp://ftp.aoml.noaa.gov/phod/pub/ARGO_FTP/argo)
+  2) [Many Files](https://www.nohrsc.noaa.gov/gisdatasets/)
+  3) [Database](https://www1.eere.energy.gov/library/default.aspx)
+  4) [Visualization/Interactive](https://www.nohrsc.noaa.gov/interactive/html/map.html)
 
 7. Move on to the next URL and hit the extension again
 
