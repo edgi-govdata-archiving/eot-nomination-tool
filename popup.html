@@ -10,12 +10,12 @@
     <header><h1>EOT Nomination Tool</h1></header>
     <main>
       <form id="form" action="#">
-        <div class="form-field -required">
-          <label for="title">Title</label>
+        <div class="form-field">
+          <label class="-required" for="title">Title</label>
           <input id="title" required>
         </div>
-        <div class="form-field -required">
-          <label for="url">URL</label>
+        <div class="form-field">
+          <label class="-required" for="url">URL</label>
           <input id="url" required>
         </div>
         <div class="form-message" id="url-warning">This URL has already been archived in the last 30 days</div>
@@ -562,30 +562,34 @@
             </select>
           </div>
         </div>
-        <div class="form-field -required">
-          <label for="name">Your Name</label>
+        <div class="form-field">
+          <label class="-required" for="name">Your Name</label>
           <input id="name" required>
         </div>
-        <div class="form-field -required">
-          <label for="email">Your Email</label>
+        <div class="form-field">
+          <label class="-required" for="email">Your Email</label>
           <input id="email" type="email" required>
         </div>
-        <div class="form-field -required">
-          <label for="eventName">Event Name</label>
+        <div class="form-field">
+          <label class="-required" for="eventName">Event Name</label>
           <input id="eventName" required>
         </div>
-        <div class="form-field multi -required">
-          <label for="agencyID">Agency Office</label>
+        <div class="form-field -multi">
+          <label class="-required" for="agencyID">Agency</label>
           <input id="agencyID" type="number" min="0" max="99" required>
+          <label class="-required" for="subAgencyID">Subagency</label>
           <input id="subAgencyID" type="number" min="0" max="99" required>
+        </div>
+        <div class="form-field -multi">
+          <label class="-required" for="organizationID">Organization</label>
           <input id="organizationID" type="number" min="0" max="99" required>
+          <label for="suborgID">Suborganization</label>
           <input id="suborgID" type="number" min="0" max="99">
         </div>
-        <div class="form-field multi">
+        <div class="form-field -multi">
           <label for="subprimerID">Subprimer</label>
           <input id="subprimerID" type="number">
-          <span class="_filler"></span>
-          <span class="_filler"></span>
+          <label></label>
           <span class="_filler"></span>
         </div>
         <div class="form-field">

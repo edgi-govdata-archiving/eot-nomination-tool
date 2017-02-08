@@ -129,14 +129,17 @@ main {
   margin-bottom: 0;
 }
 .form-field label {
-  flex-basis: 8rem;
   font-size: .875rem;
   padding-top: .25rem;
   margin-top: 1px;
   white-space: nowrap;
   position: relative;
 }
-.form-field.-required label:before {
+.form-field label:first-of-type {
+  flex-grow: 0;
+  flex-basis: 8rem;
+}
+.form-field label.-required:before {
   content: '';
   position: absolute;
   left: -.5rem;
@@ -149,7 +152,7 @@ main {
   border-radius: .15rem;
 }
 .form-field input, .form-field ._select-wrapper, .form-field textarea, .form-field ._filler, .form-field fieldset {
-  flex: 1;
+  flex-grow: 1;
 }
 .form-field ._filler {
   padding: .25em;
@@ -159,11 +162,17 @@ main {
   border: none;
   padding: 0;
 }
-.form-field.multi input, .form-field.multi ._filler {
+.form-field.-multi input, .form-field.-multi ._filler {
   width: 0;
   margin-right: .5rem;
 }
-.form-field.multi input:last-child, .form-field.multi ._filler:last-child {
+.form-field.-multi label:not(:first-child) {
+  width: 0;
+  margin-right: .5rem;
+  flex-grow: 1;
+  left: .5rem;
+}
+.form-field.-multi input:last-child, .form-field.-multi ._filler:last-child {
   margin-right: 0;
 }
 .form-field input, .form-field select, .form-field textarea {
