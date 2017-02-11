@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "manifest_version": 2,
   "description": "Nomination Tool for Data Rescue Events",
-  "homepage_url": "http://digital2.library.unt.edu/nominatiAon/eth2016/about/",
+  "homepage_url": "http://digital2.library.unt.edu/nomination/eth2016/about/",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
