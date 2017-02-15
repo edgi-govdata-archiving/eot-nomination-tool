@@ -248,7 +248,7 @@ function handleSubmit( e ) {
     })
     .catch(function(error) {
       $('#submit').prop('disabled', false);
-      showStatus('failure', 'Could not submit URL (' + error.statusText || 'Generic error');
+      showStatus('failure', 'Could not submit URL (' + (error.statusText || 'Generic error') + ')');
     })
 }
 
