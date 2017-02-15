@@ -22,7 +22,7 @@ function debounce(fn, duration) {
       clearTimeout(timeout);
     }
 
-    timeout = setTimeout(function(){
+    timeout = setTimeout(function () {
       timeout = null;
       fn.apply(scope, args);
     }, duration);
@@ -238,7 +238,7 @@ function handleSubmit( e ) {
   data[COMMMENT_ID] = commentID;
 
   $.get(GOOGLE_FORMS_URL, data)
-    .then(function() {
+    .then(function () {
       $('#submit').prop('disabled', false);
 
       showStatus('success', 'URL submitted. Thanks!');
@@ -255,7 +255,7 @@ function handleSubmit( e ) {
 /* When the popup loads: Autopopulate the name, event name and email if it has been submitted before,
 * i.e. if localStorage has these fields already saved.
 */
-$(function() {
+$(function () {
   if ( localStorage.name && localStorage.name !== "null" ) {
     $( '#name' ).val( localStorage.name );
   }
