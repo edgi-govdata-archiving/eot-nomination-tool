@@ -1,6 +1,6 @@
 /* List of Agency Office Codes and their corresponding Department names
 */
-const AGENCY_IDS = {
+var AGENCY_IDS = {
   "1": "Environmental Protection Agency",
   "2": "Energy Department",
   "3": "National Oceanic and Atmospheric Administration",
@@ -12,23 +12,23 @@ const AGENCY_IDS = {
 };
 
 function debounce(fn, duration) {
-  let timeout = null;
+  var timeout = null;
 
   return function () {
-    const args = arguments;
+    var args = arguments;
 
     if (timeout) {
       clearTimeout(timeout);
     }
 
-    timeout = setTimeout(() => {
+    timeout = setTimeout(function(){
       timeout = null;
       fn.apply(this, args);
     }, duration);
   };
 }
 
-let statusHideTimeout = null;
+var statusHideTimeout = null;
 
 function showStatus(type, text) {
   if (statusHideTimeout) {
@@ -64,7 +64,7 @@ function hideUrlWarning() {
 }
 
 function checkUrl() {
-  const options = {
+  var options = {
     url: $('#url').val(),
     limit: -1,
     output: 'json',
@@ -72,20 +72,20 @@ function checkUrl() {
   };
 
   $.getJSON('http://web.archive.org/cdx/search/cdx', options)
-    .then((response) => {
+    .then(function(response) {
       if (response.length) {
-        const headers = response[0];
-        const rows = response.slice(1);
+        var headers = response[0];
+        var rows = response.slice(1);
 
-        return rows.map((row) => {
-          const match = {};
+        return rows.map(function(row) {
+          var match = {};
 
-          headers.forEach((header, idx) => {
-            const value = row[idx];
+          headers.forEach(function(header, idx) {
+            var value = row[idx];
 
             switch (header) {
             case 'timestamp':
-              const tokens = /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/.exec(value);
+              var tokens = /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/.exec(value);
 
               if (tokens) {
                 match[header] = new Date(
@@ -111,21 +111,21 @@ function checkUrl() {
         return response;
       }
     })
-    .then((matches) => {
+    .then(function(matches) {
       hideUrlWarning();
 
       if (matches.length) {
-        const match = matches[0];
-        const now = new Date();
-        const staleDays = 30;
-        const staleDuration = staleDays * 24 * 60 * 60 * 1000; // days in milliseconds
+        var match = matches[0];
+        var now = new Date();
+        var staleDays = 30;
+        var staleDuration = staleDays * 24 * 60 * 60 * 1000; // days in milliseconds
 
         if (now - match.timestamp < staleDuration) {
-          showUrlWarning(`This URL has already been archived in the last ${staleDays} days`);
+          showUrlWarning('This URL has already been archived in the last ' + staleDays + ' days');
         }
       }
     })
-    .catch((error) => {
+    .catch(function(error) {
       hideUrlWarning();
       console.error('Error looking up URL in CDX', error);
     });
@@ -146,26 +146,26 @@ function handleSubmit( e ) {
   $('#submit').prop('disabled', true);
 
   // Google Forms constants
-  const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1udxf9C7XeO7rm-SoucjDIv0c8XzGb7VVutsCI8r4s-Y/formResponse';
-  const NAME_FIELD = 'entry.1227505863';
-  const EMAIL_FIELD = 'entry.1975141568';
-  const EVENTNAME_FIELD = 'entry.1518336548';
-  const URL_FIELD = 'entry.1767515686';
-  const TITLE_FIELD = 'entry.180917746';
+  var GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/1udxf9C7XeO7rm-SoucjDIv0c8XzGb7VVutsCI8r4s-Y/formResponse';
+  var NAME_FIELD = 'entry.1227505863';
+  var EMAIL_FIELD = 'entry.1975141568';
+  var EVENTNAME_FIELD = 'entry.1518336548';
+  var URL_FIELD = 'entry.1767515686';
+  var TITLE_FIELD = 'entry.180917746';
 
-  const NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
-  const AGENCY_FIELD = 'entry.1285343614';
-  const AGENCY_ID = 'entry.536064408';
-  const SUBAGENCY_ID = 'entry.1706245913';
-  const ORGANIZATION_ID = 'entry.1076101938';
-  const SUBORG_ID = 'entry.1768657731';
-  const SUBPRIMER_ID = 'entry.615621344';
-  const FTP_ID = 'entry.365628902';
-  const VISUALIZATION_ID = 'entry.2057247667';
-  const DIFFICULTY_ID = 'entry.1702958174';
-  const DATABASE_ID = 'entry.15716096';
-  const COMMMENT_ID = 'entry.2034225983';
-  //const CRAWLABLE_ID = 'entry.2059306163';
+  var NOTIFICATION_TOOL_URL = 'http://digital2.library.unt.edu/nomination/eth2016/url/';
+  var AGENCY_FIELD = 'entry.1285343614';
+  var AGENCY_ID = 'entry.536064408';
+  var SUBAGENCY_ID = 'entry.1706245913';
+  var ORGANIZATION_ID = 'entry.1076101938';
+  var SUBORG_ID = 'entry.1768657731';
+  var SUBPRIMER_ID = 'entry.615621344';
+  var FTP_ID = 'entry.365628902';
+  var VISUALIZATION_ID = 'entry.2057247667';
+  var DIFFICULTY_ID = 'entry.1702958174';
+  var DATABASE_ID = 'entry.15716096';
+  var COMMMENT_ID = 'entry.2034225983';
+  //var CRAWLABLE_ID = 'entry.2059306163';
 
   var title = $( '#title' ).val();
   var name = $( '#name' ).val();
@@ -216,7 +216,7 @@ function handleSubmit( e ) {
     localStorage.subprimerID = subprimerID;
   }
 
-  const data = { ifq: '' };
+  var data = { ifq: '' };
 
   data[NAME_FIELD] = localStorage.name;
   data[EMAIL_FIELD] = localStorage.email;
@@ -237,7 +237,7 @@ function handleSubmit( e ) {
   data[COMMMENT_ID] = commentID;
 
   $.get(GOOGLE_FORMS_URL, data)
-    .then(() => {
+    .then(function() {
       $('#submit').prop('disabled', false);
 
       showStatus('success', 'URL submitted. Thanks!');
@@ -245,16 +245,16 @@ function handleSubmit( e ) {
       // uncomment this line to also add the URL through the official notificaiton tool.
       // window.open(NOTIFICATION_TOOL_URL + currentURL);
     })
-    .catch((error) => {
+    .catch(function(error) {
       $('#submit').prop('disabled', false);
-      showStatus('failure', `Could not submit URL (${ error.statusText || 'Generic error' })`);
-    });
+      showStatus('failure', 'Could not submit URL (' + error.statusText || 'Generic error');
+    })
 }
 
 /* When the popup loads: Autopopulate the name, event name and email if it has been submitted before,
 * i.e. if localStorage has these fields already saved.
 */
-$(() => {
+$(function() {
   if ( localStorage.name && localStorage.name !== "null" ) {
     $( '#name' ).val( localStorage.name );
   }
