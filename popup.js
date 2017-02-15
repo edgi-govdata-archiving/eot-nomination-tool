@@ -15,6 +15,7 @@ function debounce(fn, duration) {
   var timeout = null;
 
   return function () {
+    var scope = this;
     var args = arguments;
 
     if (timeout) {
@@ -23,7 +24,7 @@ function debounce(fn, duration) {
 
     timeout = setTimeout(function(){
       timeout = null;
-      fn.apply(this, args);
+      fn.apply(scope, args);
     }, duration);
   };
 }
