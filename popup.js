@@ -73,15 +73,15 @@ function checkUrl() {
   };
 
   $.getJSON('http://web.archive.org/cdx/search/cdx', options)
-    .then(function(response) {
+    .then(function (response) {
       if (response.length) {
         var headers = response[0];
         var rows = response.slice(1);
 
-        return rows.map(function(row) {
+        return rows.map(function (row) {
           var match = {};
 
-          headers.forEach(function(header, idx) {
+          headers.forEach(function (header, idx) {
             var value = row[idx];
 
             switch (header) {
@@ -112,7 +112,7 @@ function checkUrl() {
         return response;
       }
     })
-    .then(function(matches) {
+    .then(function (matches) {
       hideUrlWarning();
 
       if (matches.length) {
@@ -126,7 +126,7 @@ function checkUrl() {
         }
       }
     })
-    .catch(function(error) {
+    .catch(function (error) {
       hideUrlWarning();
       console.error('Error looking up URL in CDX', error);
     });
@@ -246,7 +246,7 @@ function handleSubmit( e ) {
       // uncomment this line to also add the URL through the official notificaiton tool.
       // window.open(NOTIFICATION_TOOL_URL + currentURL);
     })
-    .catch(function(error) {
+    .catch(function (error) {
       $('#submit').prop('disabled', false);
       showStatus('failure', 'Could not submit URL (' + (error.statusText || 'Generic error') + ')');
     })
