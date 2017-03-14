@@ -122,7 +122,7 @@ function checkUrl() {
         var staleDuration = staleDays * 24 * 60 * 60 * 1000; // days in milliseconds
 
         if (now - match.timestamp < staleDuration) {
-          showUrlWarning('This URL has already been archived in the last ' + staleDays + ' days');
+          showUrlWarning('This URL has already been crawled by Internet Archive in the last  ' + staleDays + ' days');
         }
       }
     })
