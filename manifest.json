@@ -20,12 +20,11 @@
   },
   "permissions": [
     "tabs",
+    "cookies",
     "http://*/*",
     "https://*/*",
     "clipboardRead",
     "clipboardWrite",
-    "identity",
-    "http://digital2.library.unt.edu/nomination/eth2016/url/",
-    "https://docs.google.com/"
+    "identity"
   ]
 }
