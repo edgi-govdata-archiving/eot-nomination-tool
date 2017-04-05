@@ -220,7 +220,7 @@ function submitToUntGwda(fields) {
     eventName: 'nominator_institution'
   };
 
-  return $.get(url) // Load form to page to get CSRF cookie
+  return $.get(url) // Load form page to get CSRF cookie
     .then(function () {
       console.log('Loaded form page');
 
