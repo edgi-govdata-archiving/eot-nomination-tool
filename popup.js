@@ -161,7 +161,7 @@ function getCookieValue(url, name) {
       if (cookie) {
         resolve(cookie.value);
       } else {
-        reject();
+        reject(new Error('Could not read cookie: ' + name));
       }
     });
   });
