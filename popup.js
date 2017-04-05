@@ -246,7 +246,7 @@ function submitToUntGwda(fields) {
 }
 
 // POST the data to the server using XMLHttpRequest
-function handleSubmit( e ) {
+function handleSubmit(e) {
   e.preventDefault();
 
   var fields = {
