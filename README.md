@@ -2,12 +2,12 @@
 
 # 2016 Presidental Harvest - Nomination Tool
 
-Developers please see [Contributing and Forking This Tool](./Contributing.md)  
-For usage skip straight to [Usage Instructions](#usage)
+Developers, please see [Contributing and Forking This Tool](./Contributing.md)  
+For usage, skip straight to [Usage Instructions](#usage)
 
 ## What is this?
 
-Nomination tool Chrome Bookmarlet for [End of Term Presidental Harvest 2016](http://digital2.library.unt.edu/nomination/eth2016/about/).
+Nomination tool Chrome Bookmarklet for [End of Term Presidental Harvest 2016](http://digital2.library.unt.edu/nomination/eth2016/about/).
 
 > The Library of Congress, California Digital Library, University of North Texas Libraries, Internet Archive, George Washington University Libraries, Stanford University Libraries, and the U.S. Government Publishing Office have joined together for a collaborative project to preserve public United States Government web sites at the end of the current presidential administration ending January 20, 2017. This harvest is intended to document federal agencies' presence on the World Wide Web during the transition of Presidential administrations and to enhance the existing collections of the partner institutions.
 
@@ -29,13 +29,13 @@ We have published a version of the chrome Extension [on the Chrome Store](https:
 
 1. Go to the URL that you wish to nominate.
 
-1. Click the extension icon near the address bar (the icon looks like a black magnifying glass). A form will pop up beneath the icon. The title and URL will be autofilled with the current URL of the tab, and once you have submitted the form one time, your name/email/event information will also be pre-filled.
+1. Click the extension icon near the address bar (the icon looks like a black magnifying glass). A form will pop up beneath the icon. The title and URL will be autofilled with the current URL of the tab. Once you have submitted the form, your name/email/event information will also be pre-filled.
 
 1. If you're working with an EDGI subprimer ([found here](https://envirodatagov.org/agency-forecasts/)), you should fill-in the corresponding Agency Office Code that relates to particular subprimers. Filling in the code will autocomplete the agency in the dropdown above.
 
 1. Fill in the subprimer field with the corresponding numbered link in the subprimer you're working with. 
 
-1. If the page contains uncrawlable content, note that by selecting one or a combination of the four toggles. On subsequent uses, these will be pre-filled, though you can alter them at any time just by choosing something else.
+1. If the page contains uncrawlable content, it can be indicated by selecting one or a combination of the four toggles. On subsequent uses, these will be pre-filled, though you can alter them at any time just by choosing something else.
 
   <img src="./docs/img/eot-nomination-ui-006.png" width="500" />
 
