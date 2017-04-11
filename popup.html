@@ -20,9 +20,9 @@
         </div>
         <div class="form-message" id="url-warning">This URL has already been crawled by Internet Archive in the last 30 days</div>
         <div class="form-field">
-          <label for="agency">Agency</label>
+          <label for="agencyName">Agency</label>
           <div class="_select-wrapper">
-            <select id="agency">
+            <select id="agencyName">
               <option>Adjutant General's Office (Army)</option>
               <option>Administration for Children and Families</option>
               <option>Administrative Office of U.S. Courts</option>
@@ -563,32 +563,32 @@
           </div>
         </div>
         <div class="form-field">
-          <label class="-required" for="name">Your Name</label>
-          <input id="name" required>
+          <label class="-required" for="nominatorName">Your Name</label>
+          <input id="nominatorName" required>
         </div>
         <div class="form-field">
-          <label class="-required" for="email">Your Email</label>
-          <input id="email" type="email" required>
+          <label class="-required" for="nominatorEmail">Your Email</label>
+          <input id="nominatorEmail" type="email" required>
         </div>
         <div class="form-field">
           <label class="-required" for="eventName">Event Name</label>
           <input id="eventName" required>
         </div>
         <div class="form-field -multi">
-          <label class="-required" for="agencyID">Agency</label>
-          <input id="agencyID" type="number" min="0" max="99" required>
-          <label class="-required" for="subAgencyID">Subagency</label>
-          <input id="subAgencyID" type="number" min="0" max="99" required>
+          <label class="-required" for="agencyId">Agency</label>
+          <input id="agencyId" type="number" min="0" max="99" required>
+          <label class="-required" for="subAgencyId">Subagency</label>
+          <input id="subAgencyId" type="number" min="0" max="99" required>
         </div>
         <div class="form-field -multi">
-          <label class="-required" for="organizationID">Organization</label>
-          <input id="organizationID" type="number" min="0" max="99" required>
-          <label for="suborgID">Suborganization</label>
-          <input id="suborgID" type="number" min="0" max="99">
+          <label class="-required" for="organizationId">Organization</label>
+          <input id="organizationId" type="number" min="0" max="99" required>
+          <label for="suborgId">Suborganization</label>
+          <input id="suborgId" type="number" min="0" max="99">
         </div>
         <div class="form-field -multi">
-          <label for="subprimerID">Subprimer</label>
-          <input id="subprimerID" type="number">
+          <label for="subprimerId">Subprimer</label>
+          <input id="subprimerId" type="number">
           <label></label>
           <span class="_filler"></span>
         </div>
@@ -596,24 +596,24 @@
           <label>Nature</label>
           <fieldset>
             <div class="_checkbox-wrapper">
-              <input type="checkbox" id="ftpID"> <label for="ftpID">FTP</label>
+              <input type="checkbox" id="hasFtp"> <label for="hasFtp">FTP</label>
             </div>
             <div class="_checkbox-wrapper">
-              <input type="checkbox" id="difficultyID"> <label for="difficultyID">Many Files</label>
+              <input type="checkbox" id="hasManyFiles"> <label for="hasManyFiles">Many Files</label>
             </div>
           </fieldset>
           <fieldset>
             <div class="_checkbox-wrapper">
-              <input type="checkbox" id="databaseID"> <label for="databaseID">Database</label>
+              <input type="checkbox" id="hasDatabase"> <label for="hasDatabase">Database</label>
             </div>
             <div class="_checkbox-wrapper">
-              <input type="checkbox" id="visualizationID"> <label for="visualizationID">Visualization/Interactive</label>
+              <input type="checkbox" id="hasVisualization"> <label for="hasVisualization">Visualization/Interactive</label>
             </div>
           </fieldset>
         </div>
         <div class="form-field">
-          <label for="commentID">Comments</label>
-          <textarea id="commentID" rows="3"></textarea>
+          <label for="comments">Comments</label>
+          <textarea id="comments" rows="3"></textarea>
         </div>
         <div class="form-footnote">
           Required fields
