@@ -43,8 +43,6 @@ function showStatus(type, text) {
     .show();
 }
 
-
-
 function hideStatus(delay) {
   if (statusHideTimeout) {
     clearTimeout(statusHideTimeout);
@@ -173,12 +171,13 @@ function submitToArchivers(fields) {
   console.log('Submitting to Custom Endpoint');
 
   var url = 'https://api.archivers.space/v0/uncrawlables';
+  
   return $.ajax({
     type: 'POST',
     url: url,
     contentType: 'application/json',
     dataType: 'json',
-    data: JSON.stringify(fields),
+    data: JSON.stringify(fields)
   });
 }
 
