@@ -43,6 +43,8 @@ function showStatus(type, text) {
     .show();
 }
 
+
+
 function hideStatus(delay) {
   if (statusHideTimeout) {
     clearTimeout(statusHideTimeout);
@@ -167,6 +169,19 @@ function getCookieValue(url, name) {
   });
 }
 
+function submitToArchivers(fields) {
+  console.log('Submitting to Custom Endpoint');
+
+  var url = 'https://api.archivers.space/v0/uncrawlables';
+  return $.ajax({
+    type: 'POST',
+    url: url,
+    contentType: 'application/json',
+    dataType: 'json',
+    data: JSON.stringify(fields),
+  });
+}
+
 function submitToGoogleForms(fields) {
   console.log('Submitting to Google Forms');
 
@@ -282,7 +297,7 @@ function handleSubmit(e) {
 
   $('#submit').prop('disabled', true);
 
-  $.when(submitToGoogleForms(fields), submitToUntGwda(fields))
+  $.when(submitToGoogleForms(fields), submitToArchivers(fields), submitToUntGwda(fields))
     .then(function () {
       $('#submit').prop('disabled', false);
 
