@@ -1,10 +1,12 @@
 # Contributing Guidelines
 
-We love improvements to our tools! EDGI has general [guidelines for contributing](https://github.com/edgi-govdata-archiving/overview/blob/master/CONTRIBUTING.md) to all of our organizational repos. 
+We love improvements to our tools! EDGI has general [guidelines for contributing][edgi-contributing] and a [code of conduct][edgi-conduct] for all of our organizational repos.
+
+## Here are some notes specific to this project:
 
 In contrast to earlier instructions, _we no longer encourage collaborators to publish their own forks to the Google Chrome Store_. Instead, please just be sure to co-ordinate with EDGI before the event, so we know you will be pushing seeds to our spreadsheet, and to request read access to the results if you don't already have it.  On the other hand, we would still love to have your help improving this extension!
 
-## Installing from source
+### Installing from source
 
 1.	Download or Clone this repo: https://github.com/CivicTechTO/presidential-harvest-nomination-tool
     <img src="https://raw.githubusercontent.com/mi-lee/presidential-harvest-nomination-tool/master/docs/img/gitclone.png" width="700" align="middle"/>
@@ -25,7 +27,7 @@ In contrast to earlier instructions, _we no longer encourage collaborators to pu
 
 The extension sends the form information to a Google Form, which saves responses to a Google spreadsheet. The extension's form is in `popup.html`, while the variables mapping our form elements to the Google Form are in `popup.js`. `content.js` and `event.js` work together to retrieve the title and URL of the page loaded in the current browser tab. `src/lib/` contains a copy of jquery, which we use for some basic plumbing.
 
-## Forking, if you have to
+### Forking, if you have to
 
 If for some reason you desperately want to fork the tool, you can do so this way:
 
@@ -45,3 +47,7 @@ If for some reason you desperately want to fork the tool, you can do so this way
 1. If you're modifying this extension for  non-environment-related event, you will probably want to imitate or extend the EDGI agency taxonomy. Contact us for more information, and/or read our [agency primers](https://envirodatagov.org/agency-forecasts/), which you will want to modify. 
 
 Contact us for further information!
+
+<!-- Links -->
+[edgi-conduct]: https://github.com/edgi-govdata-archiving/overview/blob/master/CONDUCT.md
+[edgi-contributing]: https://github.com/edgi-govdata-archiving/overview/blob/master/CONTRIBUTING.md
