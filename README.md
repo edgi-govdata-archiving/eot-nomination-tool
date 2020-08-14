@@ -1,8 +1,8 @@
-[![Code of Conduct](https://img.shields.io/badge/%E2%9D%A4-code%20of%20conduct-blue.svg?style=flat)](https://github.com/edgi-govdata-archiving/overview/blob/master/CONDUCT.md) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/abjpihafglmijnkkoppbookfkkanklok.svg)](https://chrome.google.com/webstore/detail/nominationtool/abjpihafglmijnkkoppbookfkkanklok)
+[![Code of Conduct](https://img.shields.io/badge/%E2%9D%A4-code%20of%20conduct-blue.svg?style=flat)](https://github.com/edgi-govdata-archiving/overview/blob/main/CONDUCT.md) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/abjpihafglmijnkkoppbookfkkanklok.svg)](https://chrome.google.com/webstore/detail/nominationtool/abjpihafglmijnkkoppbookfkkanklok)
 
 # 2016 Presidental Harvest - Nomination Tool
 
-Developers, please see [Contributing and Forking This Tool](./Contributing.md)  
+Developers, please see [Contributing and Forking This Tool](./Contributing.md)
 For usage, skip straight to [Usage Instructions](#usage)
 
 ## What is this?
@@ -33,16 +33,16 @@ We have published a version of the chrome Extension [on the Chrome Store](https:
 
 1. If you're working with an EDGI subprimer ([found here](https://envirodatagov.org/agency-forecasts/)), you should fill-in the corresponding Agency Office Code that relates to particular subprimers. Filling in the code will autocomplete the agency in the dropdown above.
 
-1. Fill in the subprimer field with the corresponding numbered link in the subprimer you're working with. 
+1. Fill in the subprimer field with the corresponding numbered link in the subprimer you're working with.
 
 1. If the page contains uncrawlable content, it can be indicated by selecting one or a combination of the four toggles. On subsequent uses, these will be pre-filled, though you can alter them at any time just by choosing something else.
 
   <img src="./docs/img/eot-nomination-ui-006.png" width="500" />
 
-  Examples of each of the four toggles to indicate uncrawlable content are:  
-    1) **FTP** [ftp.aoml.noaa.gov/phod/pub/ARGO_FTP/argo](ftp://ftp.aoml.noaa.gov/phod/pub/ARGO_FTP/argo)  
-    2) **Many Files** [nohrsc.noaa.gov/gisdatasets/](https://www.nohrsc.noaa.gov/gisdatasets/)  
-    3) **Database** [eere.energy.gov/library](https://www1.eere.energy.gov/library/default.aspx)  
-    4) **Visualization/Interactive** [nohrsc.noaa.gov/interactive/html/map.html](https://www.nohrsc.noaa.gov/interactive/html/map.html)  
+  Examples of each of the four toggles to indicate uncrawlable content are:
+    1) **FTP** [ftp.aoml.noaa.gov/phod/pub/ARGO_FTP/argo](ftp://ftp.aoml.noaa.gov/phod/pub/ARGO_FTP/argo)
+    2) **Many Files** [nohrsc.noaa.gov/gisdatasets/](https://www.nohrsc.noaa.gov/gisdatasets/)
+    3) **Database** [eere.energy.gov/library](https://www1.eere.energy.gov/library/default.aspx)
+    4) **Visualization/Interactive** [nohrsc.noaa.gov/interactive/html/map.html](https://www.nohrsc.noaa.gov/interactive/html/map.html)
 
 After submitting, move on to the next URL and click the extension icon again. Happy Archiving!!!
